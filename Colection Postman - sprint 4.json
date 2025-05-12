@@ -1,0 +1,1390 @@
+{
+	"info": {
+		"_postman_id": "d9366d9a-d654-4e91-bfd8-b2d70d0e8799",
+		"name": "ServeRest_API_Tests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44693461",
+		"_collection_link": "https://martian-meadow-2883510.postman.co/workspace/AL%C3%8DCIA's-Workspace~c2bb0329-05a8-423a-8cf3-6097eec88926/collection/44693461-d9366d9a-d654-4e91-bfd8-b2d70d0e8799?action=share&source=collection_link&creator=44693461"
+	},
+	"item": [
+		{
+			"name": "01_Usuarios",
+			"item": [
+				{
+					"name": "Cadastro válido",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status 201 - Cadastro válido\", () => pm.response.to.have.status(201));\r",
+									"pm.test(\"Resposta contém ID\", () => {\r",
+									"  const jsonData = pm.response.json();\r",
+									"  pm.expect(jsonData._id).to.exist;\r",
+									"  pm.collectionVariables.set(\"user_id\", jsonData._id);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"Teste Completo\",\r\n  \"email\": \"teste_completo@valido.com\",\r\n  \"password\": \"12345\",\r\n  \"administrador\": \"true\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://compassuol.serverest.dev/usuarios",
+							"protocol": "https",
+							"host": [
+								"compassuol",
+								"serverest",
+								"dev"
+							],
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "E-mail inválido",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status 400 - Bloqueia Gmail\", () => pm.response.to.have.status(400));"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"teste@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://compassuol.serverest.dev/usuarios",
+							"protocol": "https",
+							"host": [
+								"compassuol",
+								"serverest",
+								"dev"
+							],
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Senha Curta",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status 400 - Bloqueia Gmail\", () => pm.response.to.have.status(400));\r",
+									"pm.test(\"Status 400 - Senha muito curta\", function() {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Mensagem indica tamanho mínimo\", function() {\r",
+									"    pm.expect(pm.response.json()).to.have.property('message');\r",
+									"    pm.expect(pm.response.json().message).to.include('senha');\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Usuario Senha Curta\",\r\n    \"email\": \"senhacurta@teste.com\",\r\n    \"password\": \"1234\",\r\n    \"administrador\": \"false\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://compassuol.serverest.dev/usuarios",
+							"protocol": "https",
+							"host": [
+								"compassuol",
+								"serverest",
+								"dev"
+							],
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Senha Longa",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									"pm.test(\"Status 400 - Senha muito longa\", function() {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Mensagem indica tamanho máximo\", function() {\r",
+									"    pm.expect(pm.response.json().message).to.include('senha');\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Usuario Senha Longa\",\r\n    \"email\": \"senhalonga@teste.com\",\r\n    \"password\": \"12345678901\",\r\n    \"administrador\": \"false\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://compassuol.serverest.dev/usuarios",
+							"protocol": "https",
+							"host": [
+								"compassuol",
+								"serverest",
+								"dev"
+							],
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Usuários",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									"pm.test(\"Status 200 - Listagem OK\", function() {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Resposta é um array\", function() {\r",
+									"    pm.expect(pm.response.json()).to.be.an('array');\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Usuário teste está na listagem\", function() {\r",
+									"    const usuarios = pm.response.json();\r",
+									"    const usuarioTeste = usuarios.find(u => u._id === pm.environment.get(\"user_id\"));\r",
+									"    pm.expect(usuarioTeste).to.not.be.undefined;\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://compassuol.serverest.dev/usuarios",
+							"protocol": "https",
+							"host": [
+								"compassuol",
+								"serverest",
+								"dev"
+							],
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Usuário",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Atualização deve retornar 200\", () => {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"Nome Atualizado\",\r\n  \"email\": \"novo\" + Math.floor(Math.random() * 1000) + \"@serverest.com\",\r\n  \"password\": \"54321\",\r\n  \"administrador\": \"false\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://compassuol.serverest.dev/usuarios/{{user_id}}",
+							"protocol": "https",
+							"host": [
+								"compassuol",
+								"serverest",
+								"dev"
+							],
+							"path": [
+								"usuarios",
+								"{{user_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar via PUT",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status 201\", () => pm.response.to.have.status(201));pm.test(\"Criação via PUT deve retornar 201\", () => {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"Usuario PUT\",\r\n  \"email\": \"put{{$randomInt}}@serverest.com\",\r\n  \"password\": \"12345\",\r\n  \"administrador\": \"true\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://compassuol.serverest.dev/usuarios/{{$randomUUID}}",
+							"protocol": "https",
+							"host": [
+								"compassuol",
+								"serverest",
+								"dev"
+							],
+							"path": [
+								"usuarios",
+								"{{$randomUUID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir Usuário",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Exclusão deve retornar 200\", () => {\r",
+									"    pm.response.to.have.status(200);\r",
+									"    pm.environment.unset(\"user_id\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://compassuol.serverest.dev/usuarios/{{user_id}}",
+							"protocol": "https",
+							"host": [
+								"compassuol",
+								"serverest",
+								"dev"
+							],
+							"path": [
+								"usuarios",
+								"{{user_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "02_Login",
+			"item": [
+				{
+					"name": "Login Válido",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Login com credenciais válidas\", () => {\r",
+									"    pm.response.to.have.status(200);\r",
+									"    pm.expect(pm.response.json()).to.have.property('authorization');\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"fulano@qa.com\",\r\n  \"password\": \"teste\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://compassuol.serverest.dev/login",
+							"protocol": "https",
+							"host": [
+								"compassuol",
+								"serverest",
+								"dev"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Usuário Não Cadastrado",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Usuário não existe\", () => {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"naoexiste@teste.com\",\r\n  \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://compassuol.serverest.dev/login",
+							"protocol": "https",
+							"host": [
+								"compassuol",
+								"serverest",
+								"dev"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Senha Incorreta",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Senha incorreta\", () => {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"fulano@qa.com\",\r\n  \"password\": \"senhaerrada\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://compassuol.serverest.dev/login",
+							"protocol": "https",
+							"host": [
+								"compassuol",
+								"serverest",
+								"dev"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Email Inválido",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Formato de email inválido\", () => {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"emailinvalido\",\r\n  \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://compassuol.serverest.dev/login",
+							"protocol": "https",
+							"host": [
+								"compassuol",
+								"serverest",
+								"dev"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Email Vazio",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Email vazio\", () => {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"\",\r\n  \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://compassuol.serverest.dev/login",
+							"protocol": "https",
+							"host": [
+								"compassuol",
+								"serverest",
+								"dev"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Senha Vazia",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Senha vazia\", () => {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"fulano@qa.com\",\r\n  \"password\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://compassuol.serverest.dev/login",
+							"protocol": "https",
+							"host": [
+								"compassuol",
+								"serverest",
+								"dev"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sem Content-Type",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Deve retornar 400 sem Content-Type\", () => {\r",
+									"    pm.response.to.have.status(400);\r",
+									"    pm.expect(pm.response.json().message).to.include(\"Content-Type\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"Produto Sem Content-Type\",\r\n  \"preco\": 200,\r\n  \"descricao\": \"Testando header ausente\",\r\n  \"quantidade\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://compassuol.serverest.dev/login",
+							"protocol": "https",
+							"host": [
+								"compassuol",
+								"serverest",
+								"dev"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Token Expira em 10 Minutos",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Token gerado com sucesso\", () => {\r",
+									"    pm.response.to.have.status(200);\r",
+									"    pm.environment.set(\"auth_token\", pm.response.json().authorization);\r",
+									"    // Observação: Aguardar 10 minutos e testar o token\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"fulano@qa.com\",\r\n  \"password\": \"teste\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://compassuol.serverest.dev/login",
+							"protocol": "https",
+							"host": [
+								"compassuol",
+								"serverest",
+								"dev"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "03_Produtos",
+			"item": [
+				{
+					"name": "Cadastrar Produto",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Cadastro deve retornar 201\", () => {\r",
+									"    pm.response.to.have.status(201);\r",
+									"    pm.environment.set(\"produto_id\", pm.response.json()._id);\r",
+									"    console.log(\"ID do produto criado:\", pm.environment.get(\"produto_id\"));\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"Notebook Dell {{$randomInt}}\",\r\n  \"preco\": 3500,\r\n  \"descricao\": \"Notebook Core i7\",\r\n  \"quantidade\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://compassuol.serverest.dev/produtos",
+							"protocol": "https",
+							"host": [
+								"compassuol",
+								"serverest",
+								"dev"
+							],
+							"path": [
+								"produtos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sem Autenticação",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status 401\", () => pm.response.to.have.status(401))"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"nome\":\"Sem Token\",\"preco\":50,\"quantidade\":1}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://compassuol.serverest.dev/produtos",
+							"protocol": "https",
+							"host": [
+								"compassuol",
+								"serverest",
+								"dev"
+							],
+							"path": [
+								"produtos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Nome Repetido",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Nome repetido deve retornar 400\", () => {\r",
+									"    pm.response.to.have.status(400);\r",
+									"    pm.expect(pm.response.json().message).to.eql(\"Já existe produto com esse nome\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"Notebook Dell\",\r\n  \"preco\": 4000,\r\n  \"descricao\": \"Tentativa de nome repetido\",\r\n  \"quantidade\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://compassuol.serverest.dev/produtos",
+							"protocol": "https",
+							"host": [
+								"compassuol",
+								"serverest",
+								"dev"
+							],
+							"path": [
+								"produtos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Produtos",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status 200\", () => pm.response.to.have.status(200))"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://compassuol.serverest.dev/produtos",
+							"protocol": "https",
+							"host": [
+								"compassuol",
+								"serverest",
+								"dev"
+							],
+							"path": [
+								"produtos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Produto",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Atualização deve retornar 200\", () => {\r",
+									"    pm.response.to.have.status(200);\r",
+									"    pm.expect(pm.response.json().message).to.eql(\"Registro alterado com sucesso\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "",
+								"value": "{{token}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"Notebook Dell Atualizado\",\r\n  \"preco\": 3800,\r\n  \"descricao\": \"Configuração atualizada\",\r\n  \"quantidade\": 8\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://compassuol.serverest.dev/produtos",
+							"protocol": "https",
+							"host": [
+								"compassuol",
+								"serverest",
+								"dev"
+							],
+							"path": [
+								"produtos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir Produto",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Exclusão deve retornar 200\", () => {\r",
+									"    pm.response.to.have.status(200);\r",
+									"    pm.expect(pm.response.json().message).to.eql(\"Registro excluído com sucesso\");\r",
+									"    pm.environment.unset(\"produto_id\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Produto deve ser removido do sistema\", () => {\r",
+									"    pm.sendRequest({\r",
+									"        url: pm.environment.get(\"base_url\") + \"/produtos/\" + pm.environment.get(\"produto_id\"),\r",
+									"        method: 'GET',\r",
+									"        header: {\r",
+									"            'Authorization': pm.environment.get(\"token\")\r",
+									"        }\r",
+									"    }, (err, res) => {\r",
+									"        pm.expect(res.code).to.eql(400);\r",
+									"    });\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://compassuol.serverest.dev/produtos/{{produto_id}}",
+							"protocol": "https",
+							"host": [
+								"compassuol",
+								"serverest",
+								"dev"
+							],
+							"path": [
+								"produtos",
+								"{{produto_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "04_Carrinho",
+			"item": [
+				{
+					"name": "Listar Carrinhos Cadastrados",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Lista carrinhos - Status 200\", () => {\r",
+									"    pm.response.to.have.status(200);\r",
+									"    pm.expect(pm.response.json().carrinhos).to.be.an('array');\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://compassuol.serverest.dev/produtos/carrinhos",
+							"protocol": "https",
+							"host": [
+								"compassuol",
+								"serverest",
+								"dev"
+							],
+							"path": [
+								"produtos",
+								"carrinhos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Concluir Compra",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Deve concluir compra com status 200\", () => {\r",
+									"    pm.response.to.have.status(200);\r",
+									"    pm.expect(pm.response.json().message).to.eql(\"Registro excluído com sucesso\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://compassuol.serverest.dev/produtos/concluir-compra",
+							"protocol": "https",
+							"host": [
+								"compassuol",
+								"serverest",
+								"dev"
+							],
+							"path": [
+								"produtos",
+								"concluir-compra"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastrar Carrinho",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Criar carrinho - Status 201\", () => {\r",
+									"    pm.response.to.have.status(201);\r",
+									"    pm.environment.set(\"carrinho_id\", pm.response.json()._id);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"produtos\": [{\r\n    \"idProduto\": \"{{produto_id}}\",\r\n    \"quantidade\": 1\r\n  }]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://compassuol.serverest.dev/produtos/carrinhos",
+							"protocol": "https",
+							"host": [
+								"compassuol",
+								"serverest",
+								"dev"
+							],
+							"path": [
+								"produtos",
+								"carrinhos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Carrinho por ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Buscar carrinho - Status 200\", () => {\r",
+									"    pm.response.to.have.status(200);\r",
+									"    pm.expect(pm.response.json()._id).to.eql(pm.environment.get(\"carrinho_id\"));\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://compassuol.serverest.dev/produtos/carrinhos",
+							"protocol": "https",
+							"host": [
+								"compassuol",
+								"serverest",
+								"dev"
+							],
+							"path": [
+								"produtos",
+								"carrinhos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Concluir Compra Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Deve cancelar compra com status 200\", () => {\r",
+									"    pm.response.to.have.status(200);\r",
+									"    pm.expect(pm.response.json().message).to.eql(\"Registro excluído com sucesso\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://compassuol.serverest.dev/produtos/coancelar-compra",
+							"protocol": "https",
+							"host": [
+								"compassuol",
+								"serverest",
+								"dev"
+							],
+							"path": [
+								"produtos",
+								"coancelar-compra"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "user_id",
+			"value": ""
+		},
+		{
+			"key": "auth_token",
+			"value": ""
+		},
+		{
+			"key": "user_email",
+			"value": ""
+		},
+		{
+			"key": "token",
+			"value": ""
+		}
+	]
+}

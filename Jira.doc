@@ -1,0 +1,1852 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jira</title>
+    <meta http-equiv="Content-Type" Content="application/vnd.ms-word; charset=UTF-8">
+        <style type="text/css">
+
+.tableBorder, .grid
+{
+    background-color: #fff;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tableBorder td, .grid td
+{
+    vertical-align: top;
+    padding: 2px;
+    border: 1px solid #ccc;
+}
+
+.noPadding
+{
+    padding: 0 !important;
+}
+
+h3 .subText
+{
+    font-size: 60%;
+    font-weight: normal;
+}
+
+.tabLabel
+{
+    font-weight: bold;
+    border: 1px solid #ccc;
+    border-bottom:none;
+    padding: 2px;
+    display: inline;
+}
+
+td.blank
+{
+    padding: 0;
+    margin: 0;
+}
+
+.blank td
+{
+    border: none;
+}
+
+#descriptionArea
+{
+    margin: 0;
+    padding: 2px;
+    border: 1px solid #ccc;
+}
+
+hr
+{
+    border-top:1px solid #aaa;
+}
+
+hr.fullcontent
+{
+  height: 15px;
+  padding: 10px 0;
+  background: #fff url('https://compass-qe.atlassian.net/images/icons/hr.gif') no-repeat scroll center;
+}
+
+</style>
+
+</head>
+<body>
+
+<table class="tableBorder" cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr>
+        <td bgcolor="#f0f0f0" width="100%" colspan="2" valign="top">
+                            <h3 class="formtitle">
+                        [MDRBBB-7]&nbsp;<a href="https://compass-qe.atlassian.net/browse/MDRBBB-7">Bug identificado no GET/store da API Petstore</a>
+            <span class="subText">
+               Criado: 04/mai/25                   &nbsp;Atualizado(a): 04/mai/25
+
+                                            </span>
+            </h3>
+        </td>
+    </tr>
+    <tr>
+        <td width="20%"><b>Status:</b></td>
+        <td width="80%">Tarefas pendentes</td>
+    </tr>
+    <tr>
+        <td width="20%"><b>Projeto:</b></td>
+        <td width="80%"><a href="https://compass-qe.atlassian.net/secure/BrowseProject.jspa?id=10001">Modelo de report de bugs - Bug Busters</a></td>
+    </tr>
+
+        <tr>
+            <td><b>Componentes:</b></td>
+            <td>
+                            Nenhum
+                </td>
+    </tr>
+    
+
+        <tr>
+            <td><b>Versões afetadas:</b></td>
+            <td>
+                            Nenhum
+                </td>
+    </tr>
+    
+
+        <tr>
+            <td><b>Versões corrigidas:</b></td>
+            <td>
+                            Nenhum
+                </td>
+    </tr>
+    
+    
+    </table>
+
+<br />
+<table class="grid" cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr>
+        <td bgcolor="#f0f0f0" valign="top" width="20%">
+            <b>Tipo:</b>
+        </td>
+        <td bgcolor="#ffffff" valign="top"  width="30%" >
+            Tarefa
+        </td>
+
+                    <td bgcolor="#f0f0f0">
+                <b>Prioridade:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" nowrap>
+                High
+            </td>
+            </tr>
+    <tr>
+                        <td bgcolor="#f0f0f0" valign="top" width="20%">
+                <b>Relator:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top"  width="30%" >
+                                        
+                
+        
+            <a class="user-hover" rel="712020:cd45fad2-3652-428f-9451-97c47217b7aa"
+                id="word_reporter_712020:cd45fad2-3652-428f-9451-97c47217b7aa"
+                href="https://compass-qe.atlassian.net/secure/ViewProfile.jspa?accountId=712020%3Acd45fad2-3652-428f-9451-97c47217b7aa">
+                    Thais do Amaral Cordeiro
+                </a>
+
+                            </td>
+        
+                    <td bgcolor="#f0f0f0" width="20%">
+                <b>Responsável:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" nowrap  width="30%" >
+                                        
+                
+        
+            <a class="user-hover" rel="712020:cd45fad2-3652-428f-9451-97c47217b7aa"
+                id="word_assignee_712020:cd45fad2-3652-428f-9451-97c47217b7aa"
+                href="https://compass-qe.atlassian.net/secure/ViewProfile.jspa?accountId=712020%3Acd45fad2-3652-428f-9451-97c47217b7aa">
+                    Thais do Amaral Cordeiro
+                </a>
+
+                            </td>
+            </tr>
+    	<tr>
+		<td bgcolor="#f0f0f0" width="20%">
+			<b>Resolução:</b>
+		</td>
+		<td bgcolor="#ffffff" valign="top" width="30%" nowrap>
+            				Não resolvido(s)
+                    </td>
+                    <td bgcolor="#f0f0f0" width="20%">
+                <b>Votos:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" width="30%" nowrap>
+                0
+            </td>
+        
+    </tr>
+    
+        <tr>
+        <td bgcolor="#f0f0f0" width="20%">
+            <b>Categorias:</b>
+        </td>
+        <td id="labels-10132-value" class="value" bgcolor="#ffffff" valign="top" colspan="3" nowrap>
+                            Nenhum
+                    </td>
+    </tr>
+    
+    	<tr>
+        		<td bgcolor="#f0f0f0" width="20%"><b>Estimativa de trabalho restante:</b></td>
+        <td bgcolor="#ffffff" valign="top" nowrap width="80%" colspan="3">
+                            Desconhecido
+            		</td>
+    </tr>
+    <tr>
+                <td bgcolor="#f0f0f0" width="20%"><b>Tempo gasto:</b></td>
+		<td bgcolor="#ffffff" valign="top" nowrap width="80%" colspan="3">
+                            Desconhecido
+            		</td>
+	</tr>
+    <tr>
+                <td bgcolor="#f0f0f0" width="20%"><b>Estimativa original:</b></td>
+		<td bgcolor="#ffffff" valign="top" nowrap width="80%" colspan="3">
+                            Desconhecido
+            		</td>
+    </tr>
+    
+    </table>
+
+
+
+    <br />
+
+    	<table class="grid" cellpadding="0" cellspacing="0" border="0" width="100%">
+            
+
+        
+    
+
+
+    
+</table>
+
+
+<hr class='fullcontent'><br /><br style='page-break-before:always;'/><br />
+<table class="tableBorder" cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr>
+        <td bgcolor="#f0f0f0" width="100%" colspan="2" valign="top">
+                            <h3 class="formtitle">
+                        [MDRBBB-6]&nbsp;<a href="https://compass-qe.atlassian.net/browse/MDRBBB-6">CLONE - Bug ao Cadastrar Produtos</a>
+            <span class="subText">
+               Criado: 15/abr/25                   &nbsp;Atualizado(a): 15/abr/25
+
+                                            </span>
+            </h3>
+        </td>
+    </tr>
+    <tr>
+        <td width="20%"><b>Status:</b></td>
+        <td width="80%">Tarefas pendentes</td>
+    </tr>
+    <tr>
+        <td width="20%"><b>Projeto:</b></td>
+        <td width="80%"><a href="https://compass-qe.atlassian.net/secure/BrowseProject.jspa?id=10001">Modelo de report de bugs - Bug Busters</a></td>
+    </tr>
+
+        <tr>
+            <td><b>Componentes:</b></td>
+            <td>
+                            Nenhum
+                </td>
+    </tr>
+    
+
+        <tr>
+            <td><b>Versões afetadas:</b></td>
+            <td>
+                            Nenhum
+                </td>
+    </tr>
+    
+
+        <tr>
+            <td><b>Versões corrigidas:</b></td>
+            <td>
+                            Nenhum
+                </td>
+    </tr>
+    
+    
+    </table>
+
+<br />
+<table class="grid" cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr>
+        <td bgcolor="#f0f0f0" valign="top" width="20%">
+            <b>Tipo:</b>
+        </td>
+        <td bgcolor="#ffffff" valign="top"  width="30%" >
+            Bug
+        </td>
+
+                    <td bgcolor="#f0f0f0">
+                <b>Prioridade:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" nowrap>
+                Medium
+            </td>
+            </tr>
+    <tr>
+                        <td bgcolor="#f0f0f0" valign="top" width="20%">
+                <b>Relator:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top"  width="30%" >
+                                        
+                
+        
+            <a class="user-hover" rel="712020:b182b978-1a0a-4386-9bab-2e2f8e0e1a7d"
+                id="word_reporter_712020:b182b978-1a0a-4386-9bab-2e2f8e0e1a7d"
+                href="https://compass-qe.atlassian.net/secure/ViewProfile.jspa?accountId=712020%3Ab182b978-1a0a-4386-9bab-2e2f8e0e1a7d">
+                    Alícia Kathleen
+                </a>
+
+                            </td>
+        
+                    <td bgcolor="#f0f0f0" width="20%">
+                <b>Responsável:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" nowrap  width="30%" >
+                                        
+                
+        
+            <a class="user-hover" rel="712020:b182b978-1a0a-4386-9bab-2e2f8e0e1a7d"
+                id="word_assignee_712020:b182b978-1a0a-4386-9bab-2e2f8e0e1a7d"
+                href="https://compass-qe.atlassian.net/secure/ViewProfile.jspa?accountId=712020%3Ab182b978-1a0a-4386-9bab-2e2f8e0e1a7d">
+                    Alícia Kathleen
+                </a>
+
+                            </td>
+            </tr>
+    	<tr>
+		<td bgcolor="#f0f0f0" width="20%">
+			<b>Resolução:</b>
+		</td>
+		<td bgcolor="#ffffff" valign="top" width="30%" nowrap>
+            				Não resolvido(s)
+                    </td>
+                    <td bgcolor="#f0f0f0" width="20%">
+                <b>Votos:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" width="30%" nowrap>
+                0
+            </td>
+        
+    </tr>
+    
+        <tr>
+        <td bgcolor="#f0f0f0" width="20%">
+            <b>Categorias:</b>
+        </td>
+        <td id="labels-10037-value" class="value" bgcolor="#ffffff" valign="top" colspan="3" nowrap>
+                            Nenhum
+                    </td>
+    </tr>
+    
+    	<tr>
+        		<td bgcolor="#f0f0f0" width="20%"><b>Estimativa de trabalho restante:</b></td>
+        <td bgcolor="#ffffff" valign="top" nowrap width="80%" colspan="3">
+                            Desconhecido
+            		</td>
+    </tr>
+    <tr>
+                <td bgcolor="#f0f0f0" width="20%"><b>Tempo gasto:</b></td>
+		<td bgcolor="#ffffff" valign="top" nowrap width="80%" colspan="3">
+                            Desconhecido
+            		</td>
+	</tr>
+    <tr>
+                <td bgcolor="#f0f0f0" width="20%"><b>Estimativa original:</b></td>
+		<td bgcolor="#ffffff" valign="top" nowrap width="80%" colspan="3">
+                            Desconhecido
+            		</td>
+    </tr>
+    
+    </table>
+
+
+
+    <br />
+
+    	<table class="grid" cellpadding="0" cellspacing="0" border="0" width="100%">
+            
+
+                <tr>
+            <td bgcolor="#f0f0f0" width=20% valign=top>
+                <b>Anexos:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top">
+                                    <img src="https://compass-qe.atlassian.net/images/icons/attach/image.gif" height="16" width="16" border="0" alt="Arquivo PNG">
+                    Captura de tela 2025-04-15 163836.png &nbsp;&nbsp;&nbsp;
+                            </td>
+        </tr>
+        
+    
+
+
+    
+</table>
+
+    <br/>
+
+    <table cellpadding="2" cellspacing="0" border="0" width="100%" align="center">
+    <tr>
+        <td bgcolor="#bbbbbb" width="1%" nowrap align="center">
+            &nbsp;<font color="#ffffff"><b>Descrição</b></font>&nbsp;
+        </td>
+        <td>&nbsp;</td>
+    </tr>
+    </table>
+
+    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr>
+        <td id="descriptionArea">
+            <h3><a name="Quandofoitestadoeondeobugaparece%3F"></a><b>Quando foi testado e onde o bug aparece?</b></h3>
+
+<p>Testado no dia 15/04/2025 às 16:41 . O erro aparece ao tentar cadastrar um novo produto na tela de “Cadastro de Produtos“. A mensagem de erro "Token de acesso ausente, inválido, expirado ou usuário do token não existe mais" é exibida persistentemente.</p>
+
+<h3><a name="Testadopor%3F"></a><b>Testado por?</b></h3>
+
+<p>Alícia Kathleen - Bug Busters</p>
+
+<h3><a name="Localiza%C3%A7%C3%A3odobug%3F"></a><b>Localização do bug?</b></h3>
+
+<p>Tela de Cadastro de Produtos. Especificamente, a mensagem de erro aparece ao clicar no botão “Cadastrar“.</p>
+
+<h3><a name="Ambiente%3F"></a><b>Ambiente?</b></h3>
+
+<p>Homologação.</p>
+
+<h3><a name="Quantasvezesomesmotestefoireproduzido%3F"></a><b>Quantas vezes o mesmo teste foi reproduzido?</b></h3>
+
+<p>Foi reproduzido 8 vezes.</p>
+
+<h3><a name="Quantasetapasparareproduzirobug%3F"></a><b>Quantas etapas para reproduzir o bug?</b></h3>
+
+<ol>
+	<li>Navegar para a tela de Cadastro de Produtos.</li>
+	<li>Preencher todos os campos obrigatórios para o cadastro do produto (“nome“, “preço“, “descrição“, “quantidade“, “imagem“).</li>
+	<li>Clicar no botão "Cadastrar Produto".</li>
+	<li>Observar a exibição persistente da mensagem de erro: "Token de acesso ausente, inválido, expirado ou usuário do token não existe mais".</li>
+</ol>
+
+
+<h3><a name="Comportamentoesperado%3F"></a><b>Comportamento esperado?</b></h3>
+
+<p> Ao preencher todos os campos corretamente e clicar em "Cadastrar Produto", o novo produto deveria ser cadastrado com sucesso no sistema, e uma mensagem de confirmação deveria ser exibida. A mensagem de erro relacionada ao token de acesso não deveria aparecer durante o processo de cadastro de um novo produto.</p>
+
+<h3><a name="Comportamentoatual%3F"></a><b>Comportamento atual?</b></h3>
+
+<p>Ao clicar em "Cadastrar Produto", a mensagem de erro "Token de acesso ausente, inválido, expirado ou usuário do token não existe mais" é exibida na tela e persiste, impedindo o cadastro do novo produto.</p>
+
+<h3><a name="Detalhesdoambiente%3F"></a><b>Detalhes do ambiente?</b></h3>
+
+<p>Testado no Wi-fi.</p>
+
+<h3><a name="Sistemaoperacional%3F"></a><b>Sistema operacional?</b></h3>
+
+<p>Windows 10.</p>
+
+<h3><a name="Navegador%3F"></a><b>Navegador?</b></h3>
+
+<p>Microsoft Bing e Google.</p>
+
+<h3><a name="N%C3%BAmerodavers%C3%A3o%3F"></a><b>Número da versão?</b></h3>
+
+<p>Não identificado.</p>
+
+<h3><a name="Informa%C3%A7%C3%B5esadicionais%3F"></a><b>Informações adicionais?</b></h3>
+
+<p>A mensagem de erro 'Token de acesso ausente, inválido, expirado ou usuário do token não existe mais' aparece imediatamente após clicar no botão de cadastrar e permanece visível na tela.</p>
+
+<h3><a name="Evid%C3%AAncia%3A"></a><b>Evidência:</b></h3>
+
+<p><span class="image-wrap" style=""><img src="/rest/api/3/attachment/content/10040" alt="Captura de tela 2025-04-15 163836.png" height="723" width="1919" style="border: 0px solid black" /></span></p>
+            <br/>
+        </td>
+    </tr>
+    </table>
+
+<hr class='fullcontent'><br /><br style='page-break-before:always;'/><br />
+<table class="tableBorder" cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr>
+        <td bgcolor="#f0f0f0" width="100%" colspan="2" valign="top">
+                            <h3 class="formtitle">
+                        [MDRBBB-5]&nbsp;<a href="https://compass-qe.atlassian.net/browse/MDRBBB-5">CLONE - Bug nos botões</a>
+            <span class="subText">
+               Criado: 15/abr/25                   &nbsp;Atualizado(a): 15/abr/25
+
+                                            </span>
+            </h3>
+        </td>
+    </tr>
+    <tr>
+        <td width="20%"><b>Status:</b></td>
+        <td width="80%">Tarefas pendentes</td>
+    </tr>
+    <tr>
+        <td width="20%"><b>Projeto:</b></td>
+        <td width="80%"><a href="https://compass-qe.atlassian.net/secure/BrowseProject.jspa?id=10001">Modelo de report de bugs - Bug Busters</a></td>
+    </tr>
+
+        <tr>
+            <td><b>Componentes:</b></td>
+            <td>
+                            Nenhum
+                </td>
+    </tr>
+    
+
+        <tr>
+            <td><b>Versões afetadas:</b></td>
+            <td>
+                            Nenhum
+                </td>
+    </tr>
+    
+
+        <tr>
+            <td><b>Versões corrigidas:</b></td>
+            <td>
+                            Nenhum
+                </td>
+    </tr>
+    
+    
+    </table>
+
+<br />
+<table class="grid" cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr>
+        <td bgcolor="#f0f0f0" valign="top" width="20%">
+            <b>Tipo:</b>
+        </td>
+        <td bgcolor="#ffffff" valign="top"  width="30%" >
+            Bug
+        </td>
+
+                    <td bgcolor="#f0f0f0">
+                <b>Prioridade:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" nowrap>
+                Medium
+            </td>
+            </tr>
+    <tr>
+                        <td bgcolor="#f0f0f0" valign="top" width="20%">
+                <b>Relator:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top"  width="30%" >
+                                        
+                
+        
+            <a class="user-hover" rel="712020:b182b978-1a0a-4386-9bab-2e2f8e0e1a7d"
+                id="word_reporter_712020:b182b978-1a0a-4386-9bab-2e2f8e0e1a7d"
+                href="https://compass-qe.atlassian.net/secure/ViewProfile.jspa?accountId=712020%3Ab182b978-1a0a-4386-9bab-2e2f8e0e1a7d">
+                    Alícia Kathleen
+                </a>
+
+                            </td>
+        
+                    <td bgcolor="#f0f0f0" width="20%">
+                <b>Responsável:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" nowrap  width="30%" >
+                                        
+                
+        
+            <a class="user-hover" rel="712020:b182b978-1a0a-4386-9bab-2e2f8e0e1a7d"
+                id="word_assignee_712020:b182b978-1a0a-4386-9bab-2e2f8e0e1a7d"
+                href="https://compass-qe.atlassian.net/secure/ViewProfile.jspa?accountId=712020%3Ab182b978-1a0a-4386-9bab-2e2f8e0e1a7d">
+                    Alícia Kathleen
+                </a>
+
+                            </td>
+            </tr>
+    	<tr>
+		<td bgcolor="#f0f0f0" width="20%">
+			<b>Resolução:</b>
+		</td>
+		<td bgcolor="#ffffff" valign="top" width="30%" nowrap>
+            				Não resolvido(s)
+                    </td>
+                    <td bgcolor="#f0f0f0" width="20%">
+                <b>Votos:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" width="30%" nowrap>
+                0
+            </td>
+        
+    </tr>
+    
+        <tr>
+        <td bgcolor="#f0f0f0" width="20%">
+            <b>Categorias:</b>
+        </td>
+        <td id="labels-10036-value" class="value" bgcolor="#ffffff" valign="top" colspan="3" nowrap>
+                            Nenhum
+                    </td>
+    </tr>
+    
+    	<tr>
+        		<td bgcolor="#f0f0f0" width="20%"><b>Estimativa de trabalho restante:</b></td>
+        <td bgcolor="#ffffff" valign="top" nowrap width="80%" colspan="3">
+                            Desconhecido
+            		</td>
+    </tr>
+    <tr>
+                <td bgcolor="#f0f0f0" width="20%"><b>Tempo gasto:</b></td>
+		<td bgcolor="#ffffff" valign="top" nowrap width="80%" colspan="3">
+                            Desconhecido
+            		</td>
+	</tr>
+    <tr>
+                <td bgcolor="#f0f0f0" width="20%"><b>Estimativa original:</b></td>
+		<td bgcolor="#ffffff" valign="top" nowrap width="80%" colspan="3">
+                            Desconhecido
+            		</td>
+    </tr>
+    
+    </table>
+
+
+
+    <br />
+
+    	<table class="grid" cellpadding="0" cellspacing="0" border="0" width="100%">
+            
+
+                <tr>
+            <td bgcolor="#f0f0f0" width=20% valign=top>
+                <b>Anexos:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top">
+                                    <img src="https://compass-qe.atlassian.net/images/icons/attach/file.gif" height="16" width="16" border="0" alt="Arquivo">
+                    2025-04-15-16-25-14.mp4 &nbsp;&nbsp;&nbsp;
+                                    <img src="https://compass-qe.atlassian.net/images/icons/attach/file.gif" height="16" width="16" border="0" alt="Arquivo">
+                    2025-04-15-16-25-14 (97d8c5bc-ac36-4f00-9cb5-3bc03af7c5b3).mp4 &nbsp;&nbsp;&nbsp;
+                            </td>
+        </tr>
+        
+    
+
+
+    
+</table>
+
+    <br/>
+
+    <table cellpadding="2" cellspacing="0" border="0" width="100%" align="center">
+    <tr>
+        <td bgcolor="#bbbbbb" width="1%" nowrap align="center">
+            &nbsp;<font color="#ffffff"><b>Descrição</b></font>&nbsp;
+        </td>
+        <td>&nbsp;</td>
+    </tr>
+    </table>
+
+    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr>
+        <td id="descriptionArea">
+            <h3><a name="Quandofoitestadoeondeobugaparece%3F"></a><b>Quando foi testado e onde o bug aparece?</b></h3>
+
+<p>Testado no dia 15/04/2025 às 16:29. Na página de “Lista dos Produtos“ (registrado como administrador) do ServeRest, ao tentar excluir ou editar um item, nenhuma ação acontece.</p>
+
+<h3><a name="Testadopor%3F"></a><b>Testado por?</b></h3>
+
+<p>Alícia Kathleen - Bug Busters</p>
+
+<h3><a name="Localiza%C3%A7%C3%A3odobug%3F"></a><b>Localização do bug?</b></h3>
+
+<p>Página de Lista dos Produtos, especificamente nos botões “Excluir“ e “Editar“.</p>
+
+<h3><a name="Ambiente%3F"></a><b>Ambiente?</b></h3>
+
+<p>Homologação.</p>
+
+<h3><a name="Quantasvezesomesmotestefoireproduzido%3F"></a><b>Quantas vezes o mesmo teste foi reproduzido?</b></h3>
+
+<p>Foi reproduzido 5 vezes.</p>
+
+<h3><a name="Quantasetapasparareproduzirobug%3F"></a><b>Quantas etapas para reproduzir o bug?</b></h3>
+
+<ol>
+	<li>Navegar na tela de “Lista de Produtos“.</li>
+	<li>Localizar os botões “Editar“ e “Excluir“.</li>
+	<li>Clicar nos botões “Editar“ e “Excluir“.</li>
+	<li>Observar que nenhuma ação ocorre (apenas reiniciação do site ao clicar no botão “excluir“).</li>
+</ol>
+
+
+<h3><a name="Comportamentoesperado%3F"></a><b>Comportamento esperado?</b></h3>
+
+<p>Ao clicar os botões “Editar“ e “Excluir“, deveria acontecer as seguintes ações: </p>
+
+<ul>
+	<li><b>Editar:</b> Uma tela ou modal para edição do item deveria ser aberta.</li>
+	<li><b>Excluir:</b> Uma mensagem de confirmação para exclusão deveria aparecer, e após a confirmação, o item deveria ser removido da lista.</li>
+</ul>
+
+
+<h3><a name="Comportamentoatual%3F"></a><b>Comportamento atual?</b> </h3>
+
+<p>Ao clicar nos botões 'Editar' ou 'Excluir', nenhum feedback visual é apresentado e nenhuma ação é executada.</p>
+
+<h3><a name="Detalhesdoambiente%3F"></a><b>Detalhes do ambiente?</b></h3>
+
+<p>Testado no Wi-fi.</p>
+
+<h3><a name="Sistemaoperacional%3F"></a><b>Sistema operacional?</b></h3>
+
+<p>Windows 10.</p>
+
+<h3><a name="Navegador%3F"></a><b>Navegador?</b></h3>
+
+<p>Microsoft Bing e Google.</p>
+
+<h3><a name="N%C3%BAmerodavers%C3%A3o%3F"></a><b>Número da versão?</b></h3>
+
+<p>Não identificado.</p>
+
+<h3><a name="Informa%C3%A7%C3%B5esadicionais%3F"></a><b>Informações adicionais?</b></h3>
+
+<p>Este problema ocorre consistentemente em todos os itens da lista de produtos.</p>
+
+<h3><a name="Evid%C3%AAncia%3A"></a><b>Evidência:</b></h3>
+
+<p><div class="embeddedObject"><object classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" codebase="https://www.apple.com/qtactivex/qtplugin.cab" data="/rest/api/3/attachment/content/10039?stream=true" height="616" type="video/mp4" width="1460" ><param name="data" value="/rest/api/3/attachment/content/10039?stream=true"/><param name="src" value="/rest/api/3/attachment/content/10039?stream=true"/><param name="type" value="video/mp4"/><embed height="616" pluginspage="https://www.apple.com/quicktime/download/" src="/rest/api/3/attachment/content/10039?stream=true" type="video/mp4" width="1460" /></object></div></p>
+            <br/>
+        </td>
+    </tr>
+    </table>
+
+<hr class='fullcontent'><br /><br style='page-break-before:always;'/><br />
+<table class="tableBorder" cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr>
+        <td bgcolor="#f0f0f0" width="100%" colspan="2" valign="top">
+                            <h3 class="formtitle">
+                        [MDRBBB-4]&nbsp;<a href="https://compass-qe.atlassian.net/browse/MDRBBB-4">WEASY - Bug no tempo de resposta da soma e imagem do produto recarregando (carrinho de compras)</a>
+            <span class="subText">
+               Criado: 15/abr/25                   &nbsp;Atualizado(a): 17/abr/25
+
+                                            </span>
+            </h3>
+        </td>
+    </tr>
+    <tr>
+        <td width="20%"><b>Status:</b></td>
+        <td width="80%">Tarefas pendentes</td>
+    </tr>
+    <tr>
+        <td width="20%"><b>Projeto:</b></td>
+        <td width="80%"><a href="https://compass-qe.atlassian.net/secure/BrowseProject.jspa?id=10001">Modelo de report de bugs - Bug Busters</a></td>
+    </tr>
+
+        <tr>
+            <td><b>Componentes:</b></td>
+            <td>
+                            Nenhum
+                </td>
+    </tr>
+    
+
+        <tr>
+            <td><b>Versões afetadas:</b></td>
+            <td>
+                            Nenhum
+                </td>
+    </tr>
+    
+
+        <tr>
+            <td><b>Versões corrigidas:</b></td>
+            <td>
+                            Nenhum
+                </td>
+    </tr>
+    
+    
+    </table>
+
+<br />
+<table class="grid" cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr>
+        <td bgcolor="#f0f0f0" valign="top" width="20%">
+            <b>Tipo:</b>
+        </td>
+        <td bgcolor="#ffffff" valign="top"  width="30%" >
+            Bug
+        </td>
+
+                    <td bgcolor="#f0f0f0">
+                <b>Prioridade:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" nowrap>
+                Medium
+            </td>
+            </tr>
+    <tr>
+                        <td bgcolor="#f0f0f0" valign="top" width="20%">
+                <b>Relator:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top"  width="30%" >
+                                        
+                
+        
+            <a class="user-hover" rel="712020:cd45fad2-3652-428f-9451-97c47217b7aa"
+                id="word_reporter_712020:cd45fad2-3652-428f-9451-97c47217b7aa"
+                href="https://compass-qe.atlassian.net/secure/ViewProfile.jspa?accountId=712020%3Acd45fad2-3652-428f-9451-97c47217b7aa">
+                    Thais do Amaral Cordeiro
+                </a>
+
+                            </td>
+        
+                    <td bgcolor="#f0f0f0" width="20%">
+                <b>Responsável:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" nowrap  width="30%" >
+                                    Não atribuído
+                            </td>
+            </tr>
+    	<tr>
+		<td bgcolor="#f0f0f0" width="20%">
+			<b>Resolução:</b>
+		</td>
+		<td bgcolor="#ffffff" valign="top" width="30%" nowrap>
+            				Não resolvido(s)
+                    </td>
+                    <td bgcolor="#f0f0f0" width="20%">
+                <b>Votos:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" width="30%" nowrap>
+                0
+            </td>
+        
+    </tr>
+    
+        <tr>
+        <td bgcolor="#f0f0f0" width="20%">
+            <b>Categorias:</b>
+        </td>
+        <td id="labels-10035-value" class="value" bgcolor="#ffffff" valign="top" colspan="3" nowrap>
+                            Nenhum
+                    </td>
+    </tr>
+    
+    	<tr>
+        		<td bgcolor="#f0f0f0" width="20%"><b>Estimativa de trabalho restante:</b></td>
+        <td bgcolor="#ffffff" valign="top" nowrap width="80%" colspan="3">
+                            Desconhecido
+            		</td>
+    </tr>
+    <tr>
+                <td bgcolor="#f0f0f0" width="20%"><b>Tempo gasto:</b></td>
+		<td bgcolor="#ffffff" valign="top" nowrap width="80%" colspan="3">
+                            Desconhecido
+            		</td>
+	</tr>
+    <tr>
+                <td bgcolor="#f0f0f0" width="20%"><b>Estimativa original:</b></td>
+		<td bgcolor="#ffffff" valign="top" nowrap width="80%" colspan="3">
+                            Desconhecido
+            		</td>
+    </tr>
+    
+    </table>
+
+
+
+    <br />
+
+    	<table class="grid" cellpadding="0" cellspacing="0" border="0" width="100%">
+            
+
+                <tr>
+            <td bgcolor="#f0f0f0" width=20% valign=top>
+                <b>Anexos:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top">
+                                    <img src="https://compass-qe.atlassian.net/images/icons/attach/file.gif" height="16" width="16" border="0" alt="Arquivo">
+                    exemplo teste celular.mp4 &nbsp;&nbsp;&nbsp;
+                                    <img src="https://compass-qe.atlassian.net/images/icons/attach/file.gif" height="16" width="16" border="0" alt="Arquivo">
+                    teste2produto.mp4 &nbsp;&nbsp;&nbsp;
+                                    <img src="https://compass-qe.atlassian.net/images/icons/attach/file.gif" height="16" width="16" border="0" alt="Arquivo">
+                    teste carrinho.mp4 &nbsp;&nbsp;&nbsp;
+                            </td>
+        </tr>
+        
+            <tr>
+            <td bgcolor="#f0f0f0" width="20%" valign="top">
+                <b>Links de itens:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" class="noPadding">
+                <table cellpadding="0" cellspacing="0" border="0" width="100%" class="blank">
+                                            <tr>
+                            <td colspan="4" bgcolor="#f0f0f0">
+                                <b>Cloners</b><br/>
+                            </td>
+                        </tr>
+                                    <tr>
+            <td>
+                clones
+            </td>
+            <td>
+                <a href="https://compass-qe.atlassian.net/browse/MDRBBB-1">
+                     MDRBBB-1                 </a>
+            </td>
+            <td>
+                Bug visual: texto desalinhado
+            </td>
+            <td>
+                Tarefas pendentes
+            </td>
+        </tr>
+                                                                    </table>
+            </td>
+        </tr>
+    
+
+
+    
+</table>
+
+    <br/>
+
+    <table cellpadding="2" cellspacing="0" border="0" width="100%" align="center">
+    <tr>
+        <td bgcolor="#bbbbbb" width="1%" nowrap align="center">
+            &nbsp;<font color="#ffffff"><b>Descrição</b></font>&nbsp;
+        </td>
+        <td>&nbsp;</td>
+    </tr>
+    </table>
+
+    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr>
+        <td id="descriptionArea">
+            <p>Ao testar o e-commerce Weasy, identifiquei que, ao alterar a quantidade de itens diretamente no carrinho de compras, há um atraso na atualização do total e a imagem do produto recarrega a cada modificação. Isso contrasta com a tela do produto, onde a atualização é instantânea e a imagem permanece estável. Uma possível solução seria aplicar a mesma lógica da tela de produto também no carrinho, garantindo uma experiência mais fluida e consistente.</p>
+
+<ol>
+	<li>Atraso na soma de itens do carrinho: Comportamento inesperado para o usuário, já que ele espera uma resposta rápida ao alterar a quantidade. Pode indicar um problema de performance.</li>
+	<li>Recarregamento da imagem do produto: Comportamento não usual. Em vez de apenas atualizar o número de itens, a imagem é atualizada, o que pode causar uma má experiência visual.</li>
+	<li>Na tela do produto, o comportamento é fluido e não há oscilação da imagem e a responsividade é adequada. Isso mostra que a funcionalidade correta já existe em outra parte do sistema.</li>
+	<li>Impacto na experiência do usuário:  Frustração, perda da confiança, abandono do carrinho e quebra da expectativa.</li>
+</ol>
+
+
+<h4><a name="Quandofoitestadoeondeobugaparece%3F"></a><b>Quando foi testado e onde o bug aparece?</b></h4>
+
+<p>Testado no dia 15/04/25 às 16:56:58. </p>
+
+<p>No notebook: Na parte direita, ao clicar no sinal + para adição de itens no produto que está no carrinho, há um delay entre cliques consecutivos e ocorre a alternação entre quantidade anterior e quantidade adicionada, mesmo que após o clique. A imagem do(s) produto(s) aparece e desaparece entre os cliques também.</p>
+
+<p>Pelo celular: No meio da tela e ocorre o mesmo cenário do notebook.</p>
+
+<h4><a name="Testadopor%3F"></a><b>Testado por?</b></h4>
+
+<p>Thaís do Amaral.</p>
+
+<h4><a name="Localiza%C3%A7%C3%A3odobug%3F"></a><b>Localização do bug?</b></h4>
+
+<p>Tela do carrinho, após selecioná-lo na página inicial, podendo ser feito sem login.</p>
+
+<h4><a name="Ambiente%3F"></a><b>Ambiente?</b></h4>
+
+<p>Produção.</p>
+
+<h4><a name="Quantasvezesomesmotestefoireproduzido%3F"></a><b>Quantas vezes o mesmo teste foi reproduzido?</b></h4>
+
+<p>Foi reproduzido mais de 5 vezes.</p>
+
+<h4><a name="Quantasetapasparareproduzirobug%3F"></a><b>Quantas etapas para reproduzir o bug?</b></h4>
+
+<p>Quatro etapas para chegar nessa tela: aceitar ou rejeitar cupom de desconto, depois selecionar algum produto na página inicial e adicioná-lo ao carrinho, por fim, adicionar repetidas vezes o mesmo item no sinal de +.</p>
+
+<h4><a name="Comportamentoesperado%3F"></a><b>Comportamento esperado?</b></h4>
+
+<p>Deixei um exemplo na terceira evidência onde não há oscilação.</p>
+
+<h4><a name="Detalhesdoambiente%3F"></a><b>Detalhes do ambiente?</b></h4>
+
+<p>Testado no Wi-Fi pelo notebook e no 4G pelo celular.</p>
+
+<h4><a name="Sistemaoperacional%3F"></a><b>Sistema operacional?</b></h4>
+
+<p>IOS 15.8.3 e Windows 11.</p>
+
+<h4><a name="Navegador%3F"></a><b>Navegador?</b></h4>
+
+<p>Notebook: Google Chrome e Edge .</p>
+
+<p>Pelo celular: Safari e Google Chrome.</p>
+
+<h4><a name="N%C3%BAmerodavers%C3%A3o%3F"></a><b>Número da versão?</b></h4>
+
+<p>Versão 2.0 (hipotético).</p>
+
+<h4><a name="Informa%C3%A7%C3%B5esadicionais%3F"></a><b>Informações adicionais?</b></h4>
+
+<p>Realizei o teste com outros produtos e há o mesmo delay/inconsistência na tela do carrinho, não é um problema exclusivo de um produto. Quando há mais de um produto no carrinho e clico consecutivamente para adicionar mais quantidade em um deles, as fotos de todos os produtos desaparecem e reaparecem.</p>
+
+<h4><a name="Evid%C3%AAncias%3A"></a><b>Evidências:</b></h4>
+
+<p>Vídeo 1 - teste pelo notebook (tela do carrinho)</p>
+
+<p><div class="embeddedObject"><object classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" codebase="https://www.apple.com/qtactivex/qtplugin.cab" data="/rest/api/3/attachment/content/10099?stream=true" height="612" type="video/mp4" width="1100" ><param name="data" value="/rest/api/3/attachment/content/10099?stream=true"/><param name="src" value="/rest/api/3/attachment/content/10099?stream=true"/><param name="type" value="video/mp4"/><embed height="612" pluginspage="https://www.apple.com/quicktime/download/" src="/rest/api/3/attachment/content/10099?stream=true" type="video/mp4" width="1100" /></object></div></p>
+
+<p>Vídeo 2 - teste pelo celular (tela do carrinho)</p>
+
+<p><div class="embeddedObject"><object classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" codebase="https://www.apple.com/qtactivex/qtplugin.cab" data="/rest/api/3/attachment/content/10043?stream=true" height="1280" type="video/mp4" width="720" ><param name="data" value="/rest/api/3/attachment/content/10043?stream=true"/><param name="src" value="/rest/api/3/attachment/content/10043?stream=true"/><param name="type" value="video/mp4"/><embed height="1280" pluginspage="https://www.apple.com/quicktime/download/" src="/rest/api/3/attachment/content/10043?stream=true" type="video/mp4" width="720" /></object></div></p>
+
+<p>Vídeo 3 - teste pelo notebook (tela do produto)</p>
+
+<p><div class="embeddedObject"><object classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" codebase="https://www.apple.com/qtactivex/qtplugin.cab" data="/rest/api/3/attachment/content/10066?stream=true" height="380" type="video/mp4" width="58.33333333333333%" ><param name="data" value="/rest/api/3/attachment/content/10066?stream=true"/><param name="src" value="/rest/api/3/attachment/content/10066?stream=true"/><param name="type" value="video/mp4"/><embed height="380" pluginspage="https://www.apple.com/quicktime/download/" src="/rest/api/3/attachment/content/10066?stream=true" type="video/mp4" width="58.33333333333333%" /></object></div></p>
+            <br/>
+        </td>
+    </tr>
+    </table>
+
+<hr class='fullcontent'><br /><br style='page-break-before:always;'/><br />
+<table class="tableBorder" cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr>
+        <td bgcolor="#f0f0f0" width="100%" colspan="2" valign="top">
+                            <h3 class="formtitle">
+                        [MDRBBB-3]&nbsp;<a href="https://compass-qe.atlassian.net/browse/MDRBBB-3">CLONE - Bug no cadastro</a>
+            <span class="subText">
+               Criado: 15/abr/25                   &nbsp;Atualizado(a): 15/abr/25
+
+                                            </span>
+            </h3>
+        </td>
+    </tr>
+    <tr>
+        <td width="20%"><b>Status:</b></td>
+        <td width="80%">Tarefas pendentes</td>
+    </tr>
+    <tr>
+        <td width="20%"><b>Projeto:</b></td>
+        <td width="80%"><a href="https://compass-qe.atlassian.net/secure/BrowseProject.jspa?id=10001">Modelo de report de bugs - Bug Busters</a></td>
+    </tr>
+
+        <tr>
+            <td><b>Componentes:</b></td>
+            <td>
+                            Nenhum
+                </td>
+    </tr>
+    
+
+        <tr>
+            <td><b>Versões afetadas:</b></td>
+            <td>
+                            Nenhum
+                </td>
+    </tr>
+    
+
+        <tr>
+            <td><b>Versões corrigidas:</b></td>
+            <td>
+                            Nenhum
+                </td>
+    </tr>
+    
+    
+    </table>
+
+<br />
+<table class="grid" cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr>
+        <td bgcolor="#f0f0f0" valign="top" width="20%">
+            <b>Tipo:</b>
+        </td>
+        <td bgcolor="#ffffff" valign="top"  width="30%" >
+            Bug
+        </td>
+
+                    <td bgcolor="#f0f0f0">
+                <b>Prioridade:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" nowrap>
+                Lowest
+            </td>
+            </tr>
+    <tr>
+                        <td bgcolor="#f0f0f0" valign="top" width="20%">
+                <b>Relator:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top"  width="30%" >
+                                        
+                
+        
+            <a class="user-hover" rel="712020:b182b978-1a0a-4386-9bab-2e2f8e0e1a7d"
+                id="word_reporter_712020:b182b978-1a0a-4386-9bab-2e2f8e0e1a7d"
+                href="https://compass-qe.atlassian.net/secure/ViewProfile.jspa?accountId=712020%3Ab182b978-1a0a-4386-9bab-2e2f8e0e1a7d">
+                    Alícia Kathleen
+                </a>
+
+                            </td>
+        
+                    <td bgcolor="#f0f0f0" width="20%">
+                <b>Responsável:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" nowrap  width="30%" >
+                                        
+                
+        
+            <a class="user-hover" rel="712020:b182b978-1a0a-4386-9bab-2e2f8e0e1a7d"
+                id="word_assignee_712020:b182b978-1a0a-4386-9bab-2e2f8e0e1a7d"
+                href="https://compass-qe.atlassian.net/secure/ViewProfile.jspa?accountId=712020%3Ab182b978-1a0a-4386-9bab-2e2f8e0e1a7d">
+                    Alícia Kathleen
+                </a>
+
+                            </td>
+            </tr>
+    	<tr>
+		<td bgcolor="#f0f0f0" width="20%">
+			<b>Resolução:</b>
+		</td>
+		<td bgcolor="#ffffff" valign="top" width="30%" nowrap>
+            				Não resolvido(s)
+                    </td>
+                    <td bgcolor="#f0f0f0" width="20%">
+                <b>Votos:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" width="30%" nowrap>
+                0
+            </td>
+        
+    </tr>
+    
+        <tr>
+        <td bgcolor="#f0f0f0" width="20%">
+            <b>Categorias:</b>
+        </td>
+        <td id="labels-10034-value" class="value" bgcolor="#ffffff" valign="top" colspan="3" nowrap>
+                            Nenhum
+                    </td>
+    </tr>
+    
+    	<tr>
+        		<td bgcolor="#f0f0f0" width="20%"><b>Estimativa de trabalho restante:</b></td>
+        <td bgcolor="#ffffff" valign="top" nowrap width="80%" colspan="3">
+                            Desconhecido
+            		</td>
+    </tr>
+    <tr>
+                <td bgcolor="#f0f0f0" width="20%"><b>Tempo gasto:</b></td>
+		<td bgcolor="#ffffff" valign="top" nowrap width="80%" colspan="3">
+                            Desconhecido
+            		</td>
+	</tr>
+    <tr>
+                <td bgcolor="#f0f0f0" width="20%"><b>Estimativa original:</b></td>
+		<td bgcolor="#ffffff" valign="top" nowrap width="80%" colspan="3">
+                            Desconhecido
+            		</td>
+    </tr>
+    
+    </table>
+
+
+
+    <br />
+
+    	<table class="grid" cellpadding="0" cellspacing="0" border="0" width="100%">
+            
+
+                <tr>
+            <td bgcolor="#f0f0f0" width=20% valign=top>
+                <b>Anexos:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top">
+                                    <img src="https://compass-qe.atlassian.net/images/icons/attach/image.gif" height="16" width="16" border="0" alt="Arquivo PNG">
+                    Captura de tela 2025-04-15 154524.png &nbsp;&nbsp;&nbsp;
+                                    <img src="https://compass-qe.atlassian.net/images/icons/attach/image.gif" height="16" width="16" border="0" alt="Arquivo PNG">
+                    Captura de tela 2025-04-15 154524-20250415-184524.png &nbsp;&nbsp;&nbsp;
+                            </td>
+        </tr>
+        
+            <tr>
+            <td bgcolor="#f0f0f0" width="20%" valign="top">
+                <b>Links de itens:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" class="noPadding">
+                <table cellpadding="0" cellspacing="0" border="0" width="100%" class="blank">
+                                            <tr>
+                            <td colspan="4" bgcolor="#f0f0f0">
+                                <b>Cloners</b><br/>
+                            </td>
+                        </tr>
+                                    <tr>
+            <td>
+                clones
+            </td>
+            <td>
+                <a href="https://compass-qe.atlassian.net/browse/MDRBBB-1">
+                     MDRBBB-1                 </a>
+            </td>
+            <td>
+                Bug visual: texto desalinhado
+            </td>
+            <td>
+                Tarefas pendentes
+            </td>
+        </tr>
+                                                                    </table>
+            </td>
+        </tr>
+    
+
+
+    
+</table>
+
+    <br/>
+
+    <table cellpadding="2" cellspacing="0" border="0" width="100%" align="center">
+    <tr>
+        <td bgcolor="#bbbbbb" width="1%" nowrap align="center">
+            &nbsp;<font color="#ffffff"><b>Descrição</b></font>&nbsp;
+        </td>
+        <td>&nbsp;</td>
+    </tr>
+    </table>
+
+    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr>
+        <td id="descriptionArea">
+            
+
+<h3><a name="Quandofoitestadoeondeobugaparece%3F"></a><b>Quando foi testado e onde o bug aparece?</b></h3>
+
+<p>Testado no dia 15/04/2025 às 15:45. Na página de cadastro do ServeRest, ao tentar criar uma nova conta de usuário. O bug visual das mensagens de erro persistentes ocorre mesmo após o preenchimento dos campos "Nome" e "Password".</p>
+
+<h3><a name="Testadopor%3F"></a><b>Testado por?</b></h3>
+
+<p>Alícia Kathleen - Bug Busters</p>
+
+<h3><a name="Localiza%C3%A7%C3%A3odobug%3F"></a><b>Localização do bug?</b></h3>
+
+<p>Tela de Cadastro de Novos Usuários. Especificamente nos campos "Nome" e "Password" e suas respectivas mensagens de erro.</p>
+
+<h3><a name="Ambiente%3F"></a><b>Ambiente?</b></h3>
+
+<p>Homologação.</p>
+
+<h3><a name="Quantasvezesomesmotestefoireproduzido%3F"></a><b>Quantas vezes o mesmo teste foi reproduzido?</b></h3>
+
+<p>Foi reproduzido 3 vezes.</p>
+
+<h3><a name="Quantasetapasparareproduzirobug%3F"></a><b>Quantas etapas para reproduzir o bug?</b></h3>
+
+<ol>
+	<li>Acessar a página de login/cadastro;</li>
+	<li>Preencher o campo “Nome“;</li>
+	<li>Preencher o campo “Passaword“;</li>
+	<li>Observar que as mensagens de erro "Nome é obrigatório" e "Password é obrigatório" permanecem visíveis, mesmo com os campos preenchidos. Ao clicar em "Cadastrar", o processo provavelmente falhará devido a essa validação incorreta.</li>
+</ol>
+
+
+<h3><a name="Comportamentoesperado%3F"></a><b>Comportamento esperado?</b></h3>
+
+<p>Ao preencher os campos "Nome" e "Password" com dados válidos, as mensagens de erro "Nome é obrigatório" e "Password é obrigatório" deveriam desaparecer, indicando que a validação para esses campos foi bem-sucedida. Ao clicar em "Cadastrar", um novo usuário deveria ser criado com sucesso.</p>
+
+<h3><a name="Comportamentoatual%3F"></a><b>Comportamento atual?</b> </h3>
+
+<p>As mensagens de erro "Nome é obrigatório" e "Password é obrigatório" permanecem visíveis na tela de cadastro, mesmo após o preenchimento dos respectivos campos com dados. Isso sugere que a validação no front-end não está reconhecendo os dados inseridos. A tentativa de cadastrar provavelmente falhará devido a essa validação incorreta.</p>
+
+<h3><a name="Detalhesdoambiente%3F"></a><b>Detalhes do ambiente?</b></h3>
+
+<p>Testado no Wi-fi.</p>
+
+<h3><a name="Sistemaoperacional%3F"></a><b>Sistema operacional?</b></h3>
+
+<p>Windows 10.</p>
+
+<h3><a name="Navegador%3F"></a><b>Navegador?</b></h3>
+
+<p>Microsoft Bing e Google.</p>
+
+<h3><a name="N%C3%BAmerodavers%C3%A3o%3F"></a><b>Número da versão?</b></h3>
+
+<p>Não identificado.</p>
+
+<h3><a name="Informa%C3%A7%C3%B5esadicionais%3F"></a><b>Informações adicionais?</b></h3>
+
+<p>O erro impede que novos usuários se cadastrem na plataforma, pois a validação básica de campos obrigatórios parece estar falhando, mesmo quando os campos estão preenchidos. Os outros campos ("Email" e a opção de administrador) parecem não estar exibindo mensagens de erro no momento, mas o problema principal reside na validação de "Nome" e "Password".</p>
+
+<h3><a name="Evid%C3%AAncia%3A"></a><b>Evidência:</b></h3>
+
+<p><span class="image-wrap" style=""><img src="/rest/api/3/attachment/content/10036" alt="Captura de tela 2025-04-15 154524-20250415-184524.png" height="783" width="956" style="border: 0px solid black" /></span></p>
+            <br/>
+        </td>
+    </tr>
+    </table>
+
+<hr class='fullcontent'><br /><br style='page-break-before:always;'/><br />
+<table class="tableBorder" cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr>
+        <td bgcolor="#f0f0f0" width="100%" colspan="2" valign="top">
+                            <h3 class="formtitle">
+                        [MDRBBB-2]&nbsp;<a href="https://compass-qe.atlassian.net/browse/MDRBBB-2"> Bug Visual no Caixa Tem – Opções não aparecem na seção “O que mais você gostaria de saber?” (Abono Salarial)</a>
+            <span class="subText">
+               Criado: 15/abr/25                   &nbsp;Atualizado(a): 15/abr/25
+
+                                            </span>
+            </h3>
+        </td>
+    </tr>
+    <tr>
+        <td width="20%"><b>Status:</b></td>
+        <td width="80%">Tarefas pendentes</td>
+    </tr>
+    <tr>
+        <td width="20%"><b>Projeto:</b></td>
+        <td width="80%"><a href="https://compass-qe.atlassian.net/secure/BrowseProject.jspa?id=10001">Modelo de report de bugs - Bug Busters</a></td>
+    </tr>
+
+        <tr>
+            <td><b>Componentes:</b></td>
+            <td>
+                            Nenhum
+                </td>
+    </tr>
+    
+
+        <tr>
+            <td><b>Versões afetadas:</b></td>
+            <td>
+                            Nenhum
+                </td>
+    </tr>
+    
+
+        <tr>
+            <td><b>Versões corrigidas:</b></td>
+            <td>
+                            Nenhum
+                </td>
+    </tr>
+    
+    
+    </table>
+
+<br />
+<table class="grid" cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr>
+        <td bgcolor="#f0f0f0" valign="top" width="20%">
+            <b>Tipo:</b>
+        </td>
+        <td bgcolor="#ffffff" valign="top"  width="30%" >
+            Bug
+        </td>
+
+                    <td bgcolor="#f0f0f0">
+                <b>Prioridade:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" nowrap>
+                Lowest
+            </td>
+            </tr>
+    <tr>
+                        <td bgcolor="#f0f0f0" valign="top" width="20%">
+                <b>Relator:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top"  width="30%" >
+                                        
+                
+        
+            <a class="user-hover" rel="712020:ea77af5f-f674-428b-8e91-c1b7f56d3d5f"
+                id="word_reporter_712020:ea77af5f-f674-428b-8e91-c1b7f56d3d5f"
+                href="https://compass-qe.atlassian.net/secure/ViewProfile.jspa?accountId=712020%3Aea77af5f-f674-428b-8e91-c1b7f56d3d5f">
+                    Raphael Rodrigues
+                </a>
+
+                            </td>
+        
+                    <td bgcolor="#f0f0f0" width="20%">
+                <b>Responsável:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" nowrap  width="30%" >
+                                        
+                
+        
+            <a class="user-hover" rel="712020:ea77af5f-f674-428b-8e91-c1b7f56d3d5f"
+                id="word_assignee_712020:ea77af5f-f674-428b-8e91-c1b7f56d3d5f"
+                href="https://compass-qe.atlassian.net/secure/ViewProfile.jspa?accountId=712020%3Aea77af5f-f674-428b-8e91-c1b7f56d3d5f">
+                    Raphael Rodrigues
+                </a>
+
+                            </td>
+            </tr>
+    	<tr>
+		<td bgcolor="#f0f0f0" width="20%">
+			<b>Resolução:</b>
+		</td>
+		<td bgcolor="#ffffff" valign="top" width="30%" nowrap>
+            				Não resolvido(s)
+                    </td>
+                    <td bgcolor="#f0f0f0" width="20%">
+                <b>Votos:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" width="30%" nowrap>
+                0
+            </td>
+        
+    </tr>
+    
+        <tr>
+        <td bgcolor="#f0f0f0" width="20%">
+            <b>Categorias:</b>
+        </td>
+        <td id="labels-10033-value" class="value" bgcolor="#ffffff" valign="top" colspan="3" nowrap>
+                            Nenhum
+                    </td>
+    </tr>
+    
+    	<tr>
+        		<td bgcolor="#f0f0f0" width="20%"><b>Estimativa de trabalho restante:</b></td>
+        <td bgcolor="#ffffff" valign="top" nowrap width="80%" colspan="3">
+                            Desconhecido
+            		</td>
+    </tr>
+    <tr>
+                <td bgcolor="#f0f0f0" width="20%"><b>Tempo gasto:</b></td>
+		<td bgcolor="#ffffff" valign="top" nowrap width="80%" colspan="3">
+                            Desconhecido
+            		</td>
+	</tr>
+    <tr>
+                <td bgcolor="#f0f0f0" width="20%"><b>Estimativa original:</b></td>
+		<td bgcolor="#ffffff" valign="top" nowrap width="80%" colspan="3">
+                            Desconhecido
+            		</td>
+    </tr>
+    
+    </table>
+
+
+
+    <br />
+
+    	<table class="grid" cellpadding="0" cellspacing="0" border="0" width="100%">
+            
+
+                <tr>
+            <td bgcolor="#f0f0f0" width=20% valign=top>
+                <b>Anexos:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top">
+                                    <img src="https://compass-qe.atlassian.net/images/icons/attach/file.gif" height="16" width="16" border="0" alt="Arquivo">
+                    Bug Caixa tem.mp4 &nbsp;&nbsp;&nbsp;
+                            </td>
+        </tr>
+        
+            <tr>
+            <td bgcolor="#f0f0f0" width="20%" valign="top">
+                <b>Links de itens:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" class="noPadding">
+                <table cellpadding="0" cellspacing="0" border="0" width="100%" class="blank">
+                                            <tr>
+                            <td colspan="4" bgcolor="#f0f0f0">
+                                <b>Cloners</b><br/>
+                            </td>
+                        </tr>
+                                    <tr>
+            <td>
+                clones
+            </td>
+            <td>
+                <a href="https://compass-qe.atlassian.net/browse/MDRBBB-1">
+                     MDRBBB-1                 </a>
+            </td>
+            <td>
+                Bug visual: texto desalinhado
+            </td>
+            <td>
+                Tarefas pendentes
+            </td>
+        </tr>
+                                                                    </table>
+            </td>
+        </tr>
+    
+
+
+    
+</table>
+
+    <br/>
+
+    <table cellpadding="2" cellspacing="0" border="0" width="100%" align="center">
+    <tr>
+        <td bgcolor="#bbbbbb" width="1%" nowrap align="center">
+            &nbsp;<font color="#ffffff"><b>Descrição</b></font>&nbsp;
+        </td>
+        <td>&nbsp;</td>
+    </tr>
+    </table>
+
+    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr>
+        <td id="descriptionArea">
+            <h3><a name="BugVisualnoCaixaTem%E2%80%93Op%C3%A7%C3%B5esn%C3%A3oaparecemnase%C3%A7%C3%A3o%E2%80%9COquemaisvoc%C3%AAgostariadesaber%3F%E2%80%9D%28AbonoSalarial%29"></a><b>Bug Visual no Caixa Tem – Opções não aparecem na seção “O que mais você gostaria de saber?” (Abono Salarial)</b></h3>
+
+<p><b>Descrição</b><br/>
+Na seção de <b>Abono Salarial</b>, ao selecionar a opção <b>“O que mais você gostaria de saber?”</b>, nenhuma opção é exibida. A área fica em branco, sem qualquer conteúdo ou mensagem.</p>
+
+<p><b>Quando foi testado e onde o bug aparece?</b><br/>
+Testado em <b>15/04/2025 às 16:16</b>, dentro do aplicativo Caixa Tem, na seção <b>Abono Salarial</b>.</p>
+
+<p><b>Testado por?</b><br/>
+<a href="https://compass-qe.atlassian.net/secure/ViewProfile.jspa?accountId=712020%3Aea77af5f-f674-428b-8e91-c1b7f56d3d5f" class="user-hover" rel="712020:ea77af5f-f674-428b-8e91-c1b7f56d3d5f" data-account-id="712020:ea77af5f-f674-428b-8e91-c1b7f56d3d5f" accountid="712020:ea77af5f-f674-428b-8e91-c1b7f56d3d5f" rel="noreferrer">Raphael Rodrigues</a> </p>
+
+<p><b>Localização do bug?</b><br/>
+Aplicativo Caixa Tem → Abono Salarial → O que mais você gostaria de saber?</p>
+
+<p><b>Ambiente?</b><br/>
+Mobile – Aplicativo Caixa Tem</p>
+
+<p><b>Quantas vezes o mesmo teste foi reproduzido?</b><br/>
+Reproduzido <b>3 vezes</b></p>
+
+<p><b>Quantas etapas para reproduzir o bug?</b><br/>
+3 etapas:</p>
+
+<ol>
+	<li>Abrir o aplicativo Caixa Tem</li>
+	<li>Acessar a área <b>Abono Salarial</b></li>
+	<li>pergunta “O que mais você gostaria de saber?” não aparece opções.</li>
+</ol>
+
+
+<p><b>Comportamento esperado?</b><br/>
+Ao clicar, o app deve exibir uma lista com perguntas e respostas adicionais sobre o Abono Salarial.</p>
+
+<p><b>Detalhes do ambiente?</b><br/>
+App atualizado na data do teste, conexão Wi-Fi estável, conta logada.</p>
+
+<p><b>Sistema operacional?</b><br/>
+Android 13</p>
+
+<p><b>Navegador?</b><br/>
+<em>Não se aplica</em> (uso em app nativo)</p>
+
+<p><b>Número da versão?</b><br/>
+Caixa Tem – versão 1.74.1 (última disponível na Play Store até o momento)</p>
+
+<p><b>Informações adicionais?</b><br/>
+O restante da funcionalidade do Abono Salarial está carregando normalmente. Apenas essa seção específica apresenta falha visual.</p>
+
+<p><b>Evidência:</b></p>
+
+<p><div class="embeddedObject"><object classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" codebase="https://www.apple.com/qtactivex/qtplugin.cab" data="/rest/api/3/attachment/content/10041?stream=true" height="1280" type="video/mp4" width="720" ><param name="data" value="/rest/api/3/attachment/content/10041?stream=true"/><param name="src" value="/rest/api/3/attachment/content/10041?stream=true"/><param name="type" value="video/mp4"/><embed height="1280" pluginspage="https://www.apple.com/quicktime/download/" src="/rest/api/3/attachment/content/10041?stream=true" type="video/mp4" width="720" /></object></div></p>
+
+
+            <br/>
+        </td>
+    </tr>
+    </table>
+
+<hr class='fullcontent'><br /><br style='page-break-before:always;'/><br />
+<table class="tableBorder" cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr>
+        <td bgcolor="#f0f0f0" width="100%" colspan="2" valign="top">
+                            <h3 class="formtitle">
+                        [MDRBBB-1]&nbsp;<a href="https://compass-qe.atlassian.net/browse/MDRBBB-1">Bug visual: texto desalinhado</a>
+            <span class="subText">
+               Criado: 14/abr/25                   &nbsp;Atualizado(a): 15/abr/25
+
+                                            </span>
+            </h3>
+        </td>
+    </tr>
+    <tr>
+        <td width="20%"><b>Status:</b></td>
+        <td width="80%">Tarefas pendentes</td>
+    </tr>
+    <tr>
+        <td width="20%"><b>Projeto:</b></td>
+        <td width="80%"><a href="https://compass-qe.atlassian.net/secure/BrowseProject.jspa?id=10001">Modelo de report de bugs - Bug Busters</a></td>
+    </tr>
+
+        <tr>
+            <td><b>Componentes:</b></td>
+            <td>
+                            Nenhum
+                </td>
+    </tr>
+    
+
+        <tr>
+            <td><b>Versões afetadas:</b></td>
+            <td>
+                            Nenhum
+                </td>
+    </tr>
+    
+
+        <tr>
+            <td><b>Versões corrigidas:</b></td>
+            <td>
+                            Nenhum
+                </td>
+    </tr>
+    
+    
+    </table>
+
+<br />
+<table class="grid" cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr>
+        <td bgcolor="#f0f0f0" valign="top" width="20%">
+            <b>Tipo:</b>
+        </td>
+        <td bgcolor="#ffffff" valign="top"  width="30%" >
+            Bug
+        </td>
+
+                    <td bgcolor="#f0f0f0">
+                <b>Prioridade:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" nowrap>
+                Lowest
+            </td>
+            </tr>
+    <tr>
+                        <td bgcolor="#f0f0f0" valign="top" width="20%">
+                <b>Relator:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top"  width="30%" >
+                                        
+                
+        
+            <a class="user-hover" rel="712020:cd45fad2-3652-428f-9451-97c47217b7aa"
+                id="word_reporter_712020:cd45fad2-3652-428f-9451-97c47217b7aa"
+                href="https://compass-qe.atlassian.net/secure/ViewProfile.jspa?accountId=712020%3Acd45fad2-3652-428f-9451-97c47217b7aa">
+                    Thais do Amaral Cordeiro
+                </a>
+
+                            </td>
+        
+                    <td bgcolor="#f0f0f0" width="20%">
+                <b>Responsável:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" nowrap  width="30%" >
+                                    Não atribuído
+                            </td>
+            </tr>
+    	<tr>
+		<td bgcolor="#f0f0f0" width="20%">
+			<b>Resolução:</b>
+		</td>
+		<td bgcolor="#ffffff" valign="top" width="30%" nowrap>
+            				Não resolvido(s)
+                    </td>
+                    <td bgcolor="#f0f0f0" width="20%">
+                <b>Votos:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" width="30%" nowrap>
+                0
+            </td>
+        
+    </tr>
+    
+        <tr>
+        <td bgcolor="#f0f0f0" width="20%">
+            <b>Categorias:</b>
+        </td>
+        <td id="labels-10006-value" class="value" bgcolor="#ffffff" valign="top" colspan="3" nowrap>
+                            Nenhum
+                    </td>
+    </tr>
+    
+    	<tr>
+        		<td bgcolor="#f0f0f0" width="20%"><b>Estimativa de trabalho restante:</b></td>
+        <td bgcolor="#ffffff" valign="top" nowrap width="80%" colspan="3">
+                            Desconhecido
+            		</td>
+    </tr>
+    <tr>
+                <td bgcolor="#f0f0f0" width="20%"><b>Tempo gasto:</b></td>
+		<td bgcolor="#ffffff" valign="top" nowrap width="80%" colspan="3">
+                            Desconhecido
+            		</td>
+	</tr>
+    <tr>
+                <td bgcolor="#f0f0f0" width="20%"><b>Estimativa original:</b></td>
+		<td bgcolor="#ffffff" valign="top" nowrap width="80%" colspan="3">
+                            Desconhecido
+            		</td>
+    </tr>
+    
+    </table>
+
+
+
+    <br />
+
+    	<table class="grid" cellpadding="0" cellspacing="0" border="0" width="100%">
+            
+
+                <tr>
+            <td bgcolor="#f0f0f0" width=20% valign=top>
+                <b>Anexos:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top">
+                                    <img src="https://compass-qe.atlassian.net/images/icons/attach/image.gif" height="16" width="16" border="0" alt="Arquivo PNG">
+                    image-20250414-191303.png &nbsp;&nbsp;&nbsp;
+                            </td>
+        </tr>
+        
+            <tr>
+            <td bgcolor="#f0f0f0" width="20%" valign="top">
+                <b>Links de itens:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" class="noPadding">
+                <table cellpadding="0" cellspacing="0" border="0" width="100%" class="blank">
+                                            <tr>
+                            <td colspan="4" bgcolor="#f0f0f0">
+                                <b>Cloners</b><br/>
+                            </td>
+                        </tr>
+                                                                <tr>
+            <td>
+                is cloned by
+            </td>
+            <td>
+                <a href="https://compass-qe.atlassian.net/browse/MDRBBB-4">
+                     MDRBBB-4                 </a>
+            </td>
+            <td>
+                WEASY - Bug no tempo de resposta da s...
+            </td>
+            <td>
+                Tarefas pendentes
+            </td>
+        </tr>
+            <tr>
+            <td>
+                is cloned by
+            </td>
+            <td>
+                <a href="https://compass-qe.atlassian.net/browse/MDRBBB-2">
+                     MDRBBB-2                 </a>
+            </td>
+            <td>
+                 Bug Visual no Caixa Tem – Opções não...
+            </td>
+            <td>
+                Tarefas pendentes
+            </td>
+        </tr>
+            <tr>
+            <td>
+                is cloned by
+            </td>
+            <td>
+                <a href="https://compass-qe.atlassian.net/browse/MDRBBB-3">
+                     MDRBBB-3                 </a>
+            </td>
+            <td>
+                CLONE - Bug no cadastro
+            </td>
+            <td>
+                Tarefas pendentes
+            </td>
+        </tr>
+                                        </table>
+            </td>
+        </tr>
+    
+
+
+    
+</table>
+
+    <br/>
+
+    <table cellpadding="2" cellspacing="0" border="0" width="100%" align="center">
+    <tr>
+        <td bgcolor="#bbbbbb" width="1%" nowrap align="center">
+            &nbsp;<font color="#ffffff"><b>Descrição</b></font>&nbsp;
+        </td>
+        <td>&nbsp;</td>
+    </tr>
+    </table>
+
+    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr>
+        <td id="descriptionArea">
+            <p>Ao testar o aplicativo móvel de aluguel de apartamentos do projeto XYZ, identificamos um bug visual. </p>
+
+<h4><a name="Quandofoitestadoeondeobugaparece%3F"></a><b>Quando foi testado e onde o bug aparece?</b></h4>
+
+<p>Testado no dia 13/01/25 às 14:25. Na parte esquerda da tela do iPhone X, o texto fica dessalinhado, sobrepondo outros elementos.</p>
+
+<h4><a name="Testadopor%3F"></a><b>Testado por?</b></h4>
+
+<p>Squad Bug Busters.</p>
+
+<h4><a name="Localiza%C3%A7%C3%A3odobug%3F"></a><b>Localização do bug?</b></h4>
+
+<p>Tela inicial do aplicativo (após login).</p>
+
+<h4><a name="Ambiente%3F"></a><b>Ambiente?</b></h4>
+
+<p>Homologação.</p>
+
+<h4><a name="Quantasvezesomesmotestefoireproduzido%3F"></a><b>Quantas vezes o mesmo teste foi reproduzido?</b></h4>
+
+<p>Foi reproduzido 5x.</p>
+
+<h4><a name="Quantasetapasparareproduzirobug%3F"></a><b>Quantas etapas para reproduzir o bug?</b></h4>
+
+<p>Uma etapa para chegar nessa tela: login/autenticação.</p>
+
+<h4><a name="Comportamentoesperado%3F"></a><b>Comportamento esperado?</b></h4>
+
+<p>O texto deve ficar alinhado para não sobrepôr os ícones da tela.</p>
+
+<h4><a name="Detalhesdoambiente%3F"></a><b>Detalhes do ambiente?</b></h4>
+
+<p>Testado no Wi-Fi e no 4G pelo aplicativo móvel.</p>
+
+<h4><a name="Sistemaoperacional%3F"></a><b>Sistema operacional?</b></h4>
+
+<p>IOS 17.5</p>
+
+<h4><a name="Navegador%3F"></a><b>Navegador?</b></h4>
+
+<p>Não. É aplicativo móvel.</p>
+
+<h4><a name="N%C3%BAmerodavers%C3%A3o%3F"></a><b>Número da versão?</b></h4>
+
+<p>Versão 2.0</p>
+
+<h4><a name="Informa%C3%A7%C3%B5esadicionais%3F"></a><b>Informações adicionais?</b></h4>
+
+<p>Nada consta.</p>
+
+<h4><a name="Evid%C3%AAncia%3A"></a><b>Evidência:</b></h4>
+
+<p><span class="image-wrap" style=""><img src="/rest/api/3/attachment/content/10000" alt="image-20250414-191303.png" height="230" width="375" style="border: 0px solid black" /></span></p>
+            <br/>
+        </td>
+    </tr>
+    </table>
+
+<hr class='fullcontent'><br /><br style='page-break-before:always;'/><br />Gerado em Mon May 12 19:41:59 UTC 2025 por Alícia Kathleen usando JIRA 1001.0.0-SNAPSHOT#100283-rev:ae90960f6ce4b93d8be8d846e57df479663fa457.
+
+</body>
+</html>
