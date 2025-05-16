@@ -33,3 +33,7 @@ class TestCalculadora:
     def test_raiz_quadrada(self, calc):
         assert calc.raiz_quadrada(9) == 3
         assert calc.raiz_quadrada(16) == 4
+
+    def test_raiz_quadrada_negativa(self, calc):
+        with pytest.raises(ValueError):
+            calc.raiz_quadrada(-1)
