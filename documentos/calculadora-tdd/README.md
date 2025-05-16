@@ -5,6 +5,18 @@
 
 ---
 
+## *📌 Funcionalidades*
+
+* *➔ Operações Básicas:*
+  * *✔️ Adição (`adicionar(a, b)`)*
+  * *✔️ Subtração (`subtrair(a, b)`)*
+  * *✔️ Multiplicação (`multiplicar(a, b)`)*
+  * *✔️ Divisão (`dividir(a, b)`)*
+
+* *➔ Operações Extras:*
+  * *✔️ Potenciação (`potencia(base, exp)`)*
+  * *✔️ Raiz Quadrada (`raiz_quadrada(n)`)*
+
 ## *Como Usar*
 
 ### *Pré-requisitos*
