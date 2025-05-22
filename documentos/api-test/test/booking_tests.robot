@@ -26,3 +26,9 @@ Resource    ../resources/booking_resources.robot
     ${booking_id}=    Set Variable    ${response.json()}[bookingid]
     ${update_response}=    Atualizar Reserva    ${booking_id}    ${token}    ${UPDATE_DATA}
     Status Should Be    200    ${update_response}
+
+ ${token}=    Obter Token de Autenticação
+    ${response}=    Criar Reserva    ${booking_data}
+    ${booking_id}=    Set Variable    ${response.json()}[bookingid}
+    ${delete_response}=    Excluir Reserva    ${booking_id}    ${token}
+    Status Should Be    201    ${delete_response}
