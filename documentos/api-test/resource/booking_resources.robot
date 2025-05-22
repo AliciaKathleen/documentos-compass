@@ -15,3 +15,8 @@ Resource    ../variables/api_variables.robot
  [Arguments]    ${booking_id}
     ${response}=    GET On Session    booking    /booking/${booking_id}
     [Return]    ${response}
+
+ [Arguments]    ${booking_id}    ${token}    ${new_data}
+    ${headers}=    Create Dictionary    Cookie=token=${token}    Content-Type=${CONTENT_TYPE}
+    ${response}=    PUT On Session    booking    /booking/${booking_id}    headers=${headers}    json=${new_data}
+    [Return]    ${response}
