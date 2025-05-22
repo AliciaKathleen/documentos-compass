@@ -6,3 +6,8 @@ Resource    ../variables/api_variables.robot
     ${auth_data}=    Create Dictionary    username=admin    password=password123
     ${response}=    POST On Session    booking    /auth    json=${auth_data}
     [Return]    ${response.json()}[token]
+
+ [Arguments]    ${data}
+    ${headers}=    Create Dictionary    Content-Type=${CONTENT_TYPE}
+    ${response}=    POST On Session    booking    /booking    json=${data}    headers=${headers}
+    [Return]    ${response}
