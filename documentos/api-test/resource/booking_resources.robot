@@ -11,3 +11,7 @@ Resource    ../variables/api_variables.robot
     ${headers}=    Create Dictionary    Content-Type=${CONTENT_TYPE}
     ${response}=    POST On Session    booking    /booking    json=${data}    headers=${headers}
     [Return]    ${response}
+
+ [Arguments]    ${booking_id}
+    ${response}=    GET On Session    booking    /booking/${booking_id}
+    [Return]    ${response}
