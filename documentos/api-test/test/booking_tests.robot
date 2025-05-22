@@ -15,3 +15,8 @@ Resource    ../resources/booking_resources.robot
     ${response}=    Criar Reserva    ${booking_data}
     Status Should Be    200    ${response}
     Dictionary Should Contain Key    ${response.json()}    bookingid
+
+ ${response}=    Criar Reserva    ${booking_data}
+    ${booking_id}=    Set Variable    ${response.json()}[bookingid]
+    ${get_response}=    Consultar Reserva Por ID    ${booking_id}
+    Status Should Be    200    ${get_response}
