@@ -20,3 +20,8 @@ Resource    ../variables/api_variables.robot
     ${headers}=    Create Dictionary    Cookie=token=${token}    Content-Type=${CONTENT_TYPE}
     ${response}=    PUT On Session    booking    /booking/${booking_id}    headers=${headers}    json=${new_data}
     [Return]    ${response}
+
+[Arguments]    ${booking_id}    ${token}
+    ${headers}=    Create Dictionary    Cookie=token=${token}
+    ${response}=    DELETE On Session    booking    /booking/${booking_id}    headers=${headers}
+    [Return]    ${response}
