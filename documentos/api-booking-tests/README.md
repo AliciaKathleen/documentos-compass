@@ -2,7 +2,7 @@
 
 
 ## 📋 Descrição
-Testes automatizados para a API [Restful-Booker](https://restful-booker.herokuapp.com/apidoc/index.html)
+Projeto desenvolvido durante a sprint de testes APIs Compass UOL.
 
 ## 🛠️ Tecnologias
 - Robot Framework
