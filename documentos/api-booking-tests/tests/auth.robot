@@ -1,16 +1,20 @@
 *** Settings ***
-Resource    __init__.robot
+Recurso             common.robot
 
-*** Keywords ***
-Get Auth Token
-    ${headers}=    Create Dictionary    Content-Type=application/json
-    ${body}=    Create Dictionary    
-    ...    username=admin    
-    ...    password=password123
+*** Palavras-Chave ***
+Criar Sessão
+    Criar Sessão    booker    ${URL_BASE}
+
+Gerar Token
+    ${cabecalhos}=  Criar Dicionário    Content-Type=application/json
+    ${corpo}=       Criar Dicionário    
+    ...             username=${USUARIO}    
+    ...             password=${SENHA}
     
-    ${response}=    POST    ${BASE_URL}/auth    
-    ...    json=${body}    
-    ...    headers=${headers}    
-    ...    expected_status=200
+    ${resposta}=    POST Na Sessão    booker    /auth    
+    ...             json=${corpo}    
+    ...             headers=${cabecalhos}    
+    ...             expected_status=200
     
-    [Return]    ${response.json()}[token]
+    ${token}=       Obter Do Dicionário    ${resposta.json()}    token
+    [Retorno]       ${token}
