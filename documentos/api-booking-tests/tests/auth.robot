@@ -1,20 +1,26 @@
 *** Settings ***
-Recurso             common.robot
+Documentation       Keywords relacionadas à autenticação
+Resource            common.robot
 
-*** Palavras-Chave ***
+*** Keywords ***
 Criar Sessão
-    Criar Sessão    booker    ${URL_BASE}
+    [Documentation]  Cria uma sessão HTTP para a API Booker
+    Create Session    booker    ${URL_BASE}    verify=true
+    Set Suite Variable    ${SESSION}    booker
 
 Gerar Token
-    ${cabecalhos}=  Criar Dicionário    Content-Type=application/json
-    ${corpo}=       Criar Dicionário    
-    ...             username=${USUARIO}    
-    ...             password=${SENHA}
+    [Documentation]  Gera token de autenticação para a API
+    [Arguments]      ${username}=${USUARIO}    ${password}=${SENHA}
     
-    ${resposta}=    POST Na Sessão    booker    /auth    
-    ...             json=${corpo}    
-    ...             headers=${cabecalhos}    
+    ${headers}=      Create Dictionary    Content-Type=application/json
+    ${body}=        Create Dictionary    
+    ...             username=${username}    
+    ...             password=${password}
+    
+    ${response}=    POST On Session    booker    /auth    
+    ...             json=${body}    
+    ...             headers=${headers}    
     ...             expected_status=200
     
-    ${token}=       Obter Do Dicionário    ${resposta.json()}    token
-    [Retorno]       ${token}
+    ${token}=       Get From Dictionary    ${response.json()}    token
+    [Return]        ${token}

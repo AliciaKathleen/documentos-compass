@@ -1,95 +1,128 @@
 *** Settings ***
-Recurso             common.robot
-Recurso             auth.robot
+Documentation       Testes CRUD para o sistema de reservas Booker
+Resource            common.robot
+Resource            auth.robot
 Suite Setup         Criar Sessão
+Test Teardown       Run Keyword If Test Failed    Log    Test failed - check logs for details
 
-*** Casos de Teste ***
+*** Variables ***
+${DEFAULT_FIRSTNAME}    Maria
+${DEFAULT_LASTNAME}     Silva
+
+*** Test Cases ***
 Cenario 01: Obter IDs de todas as reservas
-    [Tags]          GET
-    ${resposta}=    GET Na Sessão    booker    /booking
+    [Documentation]  Verifica se a API retorna uma lista de IDs de reservas
+    [Tags]          GET    SMOKE
+    ${response}=    GET On Session    booker    /booking
     ...             expected_status=200
-    Lista Não Deve Ser Vazia    ${resposta.json()}
+    Should Be Equal As Numbers    ${response.status_code}    200
+    List Should Not Contain Value    ${response.json()}    ${None}
+    ${count}=       Get Length    ${response.json()}
+    Log    Total de reservas encontradas: ${count}
 
 Cenario 02: Criar nova reserva
-    [Tags]          POST
-    ${cabecalhos}=  Criar Dicionário    Content-Type=application/json
-    ${dados}=       Criar Dicionário
-    ...             firstname=Maria
-    ...             lastname=Silva
-    ...             totalprice=200
-    ...             depositpaid=true
-    ...             bookingdates=${{"checkin":"2024-07-01","checkout":"2024-07-05"}}
+    [Documentation]  Testa a criação de uma nova reserva
+    [Tags]          POST    CRITICAL
+    ${headers}=     Create Dictionary    Content-Type=application/json
+    ${booking_dates}=    Create Dictionary    
+    ...             checkin=2024-07-01    
+    ...             checkout=2024-07-05
+    
+    ${booking_data}=    Create Dictionary    
+    ...             firstname=${DEFAULT_FIRSTNAME}    
+    ...             lastname=${DEFAULT_LASTNAME}    
+    ...             totalprice=200    
+    ...             depositpaid=${true}    
+    ...             bookingdates=${booking_dates}    
     ...             additionalneeds=Breakfast
     
-    ${resposta}=    POST Na Sessão    booker    /booking
-    ...             json=${dados}
-    ...             headers=${cabecalhos}
+    ${response}=    POST On Session    booker    /booking    
+    ...             json=${booking_data}    
+    ...             headers=${headers}    
     ...             expected_status=200
     
-    ${id_reserva}=  Set Suite Variable    ${ID_RESERVA}    ${resposta.json()}[bookingid]
-    Dictionary Should Contain Key    ${resposta.json()}    bookingid
-
+    ${booking_id}=    Set Suite Variable    ${BOOKING_ID}    ${response.json()}[bookingid]
+    Dictionary Should Contain Key    ${response.json()}    bookingid
+    Should Be True    ${booking_id} > 0
+    
 Cenario 03: Consultar reserva específica
-    [Tags]          GET
-    [Setup]         Run Keyword If    not ${ID_RESERVA}    Executar Criar Reserva
-    ${resposta}=    GET Na Sessão    booker    /booking/${ID_RESERVA}
+    [Documentation]  Testa a consulta de uma reserva específica
+    [Tags]          GET    FUNCTIONAL
+    [Setup]         Run Keyword If    "${BOOKING_ID}" == "${None}"    Criar Reserva Temporaria
+    ${response}=    GET On Session    booker    /booking/${BOOKING_ID}
     ...             expected_status=200
-    Validar Dados da Reserva    ${resposta.json()}
-
-Cenario 04: Atualizar reserva
-    [Tags]          PUT
-    [Setup]         Run Keyword If    not ${ID_RESERVA}    Executar Criar Reserva
-    ${token}=       Gerar Token
-    ${headers}=     Criar Dicionário
-    ...             Content-Type=application/json
-    ...             Cookie=token=${token}
+    Validate Booking Data    ${response.json()}
     
-    ${novos_dados}= Criar Dicionário
-    ...             firstname=Maria
+Cenario 04: Atualizar reserva
+    [Documentation]  Testa a atualização de uma reserva existente
+    [Tags]          PUT    CRITICAL
+    [Setup]         Run Keyword If    "${BOOKING_ID}" == "${None}"    Criar Reserva Temporaria
+    ${token}=       Gerar Token
+    ${headers}=     Create Dictionary    
+    ...             Content-Type=application/json    
+    ...             Cookie=token=${token}    
+    ...             Accept=application/json
+    
+    ${new_data}=    Create Dictionary    
+    ...             firstname=${DEFAULT_FIRSTNAME}    
     ...             lastname=Santos  # Sobrenome atualizado
     
-    ${resposta}=    PUT Na Sessão    booker    /booking/${ID_RESERVA}
-    ...             json=${novos_dados}
-    ...             headers=${headers}
+    ${response}=    PUT On Session    booker    /booking/${BOOKING_ID}    
+    ...             json=${new_data}    
+    ...             headers=${headers}    
     ...             expected_status=200
     
-    Should Be Equal    ${resposta.json()}[lastname]    Santos
-
+    Should Be Equal    ${response.json()}[lastname]    Santos
+    Should Be Equal    ${response.json()}[firstname]    ${DEFAULT_FIRSTNAME}
+    
 Cenario 05: Deletar reserva
-    [Tags]          DELETE
-    [Setup]         Run Keyword If    not ${ID_RESERVA}    Executar Criar Reserva
+    [Documentation]  Testa a exclusão de uma reserva
+    [Tags]          DELETE    CRITICAL
+    [Setup]         Run Keyword If    "${BOOKING_ID}" == "${None}"    Criar Reserva Temporaria
     ${token}=       Gerar Token
-    ${headers}=     Criar Dicionário
-    ...             Content-Type=application/json
+    ${headers}=     Create Dictionary    
+    ...             Content-Type=application/json    
     ...             Cookie=token=${token}
     
-    ${resposta}=    DELETE Na Sessão    booker    /booking/${ID_RESERVA}
-    ...             headers=${headers}
+    ${response}=    DELETE On Session    booker    /booking/${BOOKING_ID}    
+    ...             headers=${headers}    
     ...             expected_status=201
     
-    # Verificar exclusão
-    ${consulta}=    Run Keyword And Expect Error    *
-    ...             GET Na Sessão    booker    /booking/${ID_RESERVA}
+    # Verificar que a reserva foi realmente excluída
+    ${get_response}=    Run Keyword And Expect Error    *    
+    ...             GET On Session    booker    /booking/${BOOKING_ID}    
     ...             expected_status=404
-    Should Contain    ${consulta}    404
+    Should Contain    ${get_response}    404
+    Should Contain    ${get_response}    Not Found
 
-*** Palavras-Chave ***
-Executar Criar Reserva
-    ${cabecalhos}=  Criar Dicionário    Content-Type=application/json
-    ${dados}=       Criar Dicionário
-    ...             firstname=Temporario
-    ...             lastname=Reserva
-    ...             totalprice=100
-    ...             depositpaid=true
-    ...             bookingdates=${{"checkin":"2024-01-01","checkout":"2024-01-05"}}
+*** Keywords ***
+Criar Reserva Temporaria
+    [Documentation]  Cria uma reserva temporária para testes que necessitam de um ID existente
+    ${headers}=     Create Dictionary    Content-Type=application/json
+    ${booking_dates}=    Create Dictionary    
+    ...             checkin=2024-01-01    
+    ...             checkout=2024-01-05
     
-    ${resposta}=    POST Na Sessão    booker    /booking
-    ...             json=${dados}
-    ...             headers=${cabecalhos}
-    Set Suite Variable    ${ID_RESERVA}    ${resposta.json()}[bookingid]
+    ${booking_data}=    Create Dictionary    
+    ...             firstname=Temporario    
+    ...             lastname=Reserva    
+    ...             totalprice=100    
+    ...             depositpaid=${true}    
+    ...             bookingdates=${booking_dates}
+    
+    ${response}=    POST On Session    booker    /booking    
+    ...             json=${booking_data}    
+    ...             headers=${headers}
+    ${booking_id}=    Set Suite Variable    ${BOOKING_ID}    ${response.json()}[bookingid]
+    [Return]    ${booking_id}
 
-Validar Dados da Reserva
-    [Arguments]     ${dados_reserva}
-    Dictionary Should Contain Key    ${dados_reserva}    firstname
-    Dictionary Should Contain Key    ${dados_reserva}    lastname
-    Dictionary Should Contain Key    ${dados_reserva}    totalprice
+Validate Booking Data
+    [Documentation]  Valida os dados básicos de uma reserva
+    [Arguments]     ${booking_data}
+    Dictionary Should Contain Key    ${booking_data}    firstname
+    Dictionary Should Contain Key    ${booking_data}    lastname
+    Dictionary Should Contain Key    ${booking_data}    totalprice
+    Dictionary Should Contain Key    ${booking_data}    depositpaid
+    Dictionary Should Contain Key    ${booking_data}    bookingdates
+    Dictionary Should Contain Key    ${booking_data["bookingdates"]}    checkin
+    Dictionary Should Contain Key    ${booking_data["bookingdates"]}    checkout
