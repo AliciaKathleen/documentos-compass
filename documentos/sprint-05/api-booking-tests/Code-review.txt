@@ -1,0 +1,24 @@
+Autor: Pedro Afonso
+Revisor: Alícia Kathleen 
+Repositório: https://github.com/PeeeDrummm/artefatos-pb
+Branch: main
+
+Pontos positivos
+
+Organização geral: Código bem estruturado em recursos e testes separados.
+Documentação: Keywords bem comentadas e explicativas.
+Boas práticas de automação:
+    Uso inteligente de dados aleatórios para evitar conflitos
+    Validações completas das respostas da API
+    Separação clara entre configurações, keywords e casos de teste
+Cobertura completa: Testes cobrem todo o fluxo CRUD com validações em cada etapa.
+
+Pontos de melhoria
+
+Hardcoding: Mover credenciais (admin/password123) para variables.resource
+Duplicação: Centralizar Create Session no Suite Setup para evitar repetição
+Tratamento de erros: Adicionar validação para erros 500 da API
+Performance: Manter uma única sessão HTTP durante os testes
+Validações: Implementar checagem de schema JSON completo
+Segurança: Remover Log To Console do token de autenticação
+Variáveis: Reduzir uso de Set Suite Variable quando possível
