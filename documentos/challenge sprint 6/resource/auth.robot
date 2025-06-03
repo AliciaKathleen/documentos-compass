@@ -17,3 +17,10 @@ Status da Resposta Deve Ser
 Verificar Token na Resposta
     [Arguments]    ${response}
     Dictionary Should Contain Key    ${response.json()}    token
+
+Cadastrar Usuário
+    [Arguments]    ${email}    ${password}
+    ${headers}=    Create Dictionary    Content-Type=${CONTENT_TYPE}
+    ${body}=    Create Dictionary    email=${email}    password=${password}
+    ${response}=    POST On Session    api_session    /users    json=${body}    headers=${headers}
+    [Return]    ${response}
