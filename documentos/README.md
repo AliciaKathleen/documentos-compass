@@ -7,4 +7,4 @@ Pasta central para armazenar todos os projetos e atividades desenvolvidas durant
 **Estou reorganizando esta estrutura**  
 ▶️ Adicionando atividades pendentes  
 ▶️ Padronizando nomes de arquivos  
-▶️ Atualizando documentações individuaiss
+▶️ Atualizando documentações individuais
