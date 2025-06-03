@@ -24,3 +24,9 @@ Cadastrar Usuário
     ${body}=    Create Dictionary    email=${email}    password=${password}
     ${response}=    POST On Session    api_session    /users    json=${body}    headers=${headers}
     [Return]    ${response}
+
+Fazer Login Com Token Expirado
+    [Arguments]    ${token}
+    ${headers}=    Create Dictionary    Authorization=Bearer ${token}
+    ${response}=    GET On Session    api_session    /auth/validate    headers=${headers}
+    [Return]    ${response}
