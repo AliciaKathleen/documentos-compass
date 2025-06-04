@@ -2,8 +2,7 @@
 Library    RequestsLibrary
 Library    Collections
 Library    String
-Library    variables.py
 
 *** Variables ***
-${BASE_URL}    https://api.example.com/v1
+${BASE_URL}    https://serverest.dev
 ${CONTENT_TYPE}    application/json
